@@ -1,9 +1,10 @@
 var express = require("express");
 var mongodb = require("mongodb");
+var path = require("path");
 
 let uri;
 try {
-  uri = require("./config").db_uri;
+  uri = require("./config").dburi;
 } catch (error) {
   uri = process.env.MONGODB_URI;
 }
