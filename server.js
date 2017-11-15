@@ -10,6 +10,7 @@ try {
 }
 
 var app = express();
+
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
 var db;
 
@@ -31,7 +32,9 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + './react-front/build/index.html'));
 });
 
+
 // Initialize the app.
 const port = process.env.PORT || 8080;
 app.listen(port);
 console.log("Server listening port " + port);
+
