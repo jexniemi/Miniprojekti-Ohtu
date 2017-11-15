@@ -38,5 +38,33 @@ const port = process.env.PORT || 8080;
 app.listen(port);
 console.log("Server listening port " + port);
 
-//
+
+// Routes
+app.get("/tips", function(req, res) {
+});
+
+app.post("/tips", function(req, res) {
+  var newTip = req.body;
+  
+  if (!(req.body.title || req.body.writer)) {
+    handleError(res, "Invalid user input", "Provide title and writer.", 400);
+  }
+
+  db.collection(TIPS_COLLECTION).insertOne(newTip, function(err, doc) {
+    if (err) {
+      handleError(res, err.message, "Failed to create new tip.");
+    } else {
+      res.status(201).json(doc.ops[0]);
+    }
+  });
+});
+
+app.get("/tips/:id", function(req, res) {
+});
+
+app.put("/tips/:id", function(req, res) {
+});
+
+app.delete("/tips/:id", function(req, res) {
+});
 
