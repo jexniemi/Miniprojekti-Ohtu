@@ -4,7 +4,6 @@ var config = require("./config");
 
 var app = express();
 app.use(express.static(__dirname + "/react-front/public"));
-
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
 var db;
 
