@@ -1,4 +1,5 @@
 import React from 'react';
+
 import InputForm from './components/InputForm.js';
 import Navbar from './components/Navbar';
 
