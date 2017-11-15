@@ -1,0 +1,19 @@
+{
+  "name": "miniprojekti-ohtu",
+  "version": "1.0.0",
+  "description": "id 5a097c5a14d85c002869604e",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jexniemi/Miniprojekti-Ohtu.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jexniemi/Miniprojekti-Ohtu/issues"
+  },
+  "homepage": "https://github.com/jexniemi/Miniprojekti-Ohtu#readme"
+}
