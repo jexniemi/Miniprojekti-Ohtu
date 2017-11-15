@@ -1,13 +1,22 @@
 import React from 'react';
 
 class InputForm extends React.Component {
-  render() {
-    return (
-      <div>
-      <h1>Form!</h1>
-      
-      </div>
-    );
+  
+  
+    render() {
+        return (
+           <form>
+               <label>
+                Otsikko:
+                <input type="text" name="otsikko" />
+                </label>
+                <label>
+                Kirjoittaja:
+                <input type="text" name="kirjoittaja" />
+                </label>
+                <input type="submit" value="Tallenna" />
+            </form>
+          );
   }
 }
 
