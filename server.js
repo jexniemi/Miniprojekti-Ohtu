@@ -9,8 +9,7 @@ app.use(express.static(__dirname + "/react-front/public"));
 var db;
 
 // Connect to the database before starting the application server.
-// mongodb.MongoClient.connect(process.env.MONGODB_URI, function (err, database) {
-mongodb.MongoClient.connect(config.db_uri || process.env.MONGODB_URI, function (err, database) {
+mongodb.MongoClient.connect(config.db_uri ||  process.env.MONGODB_URI, function (err, database) {
   if (err) {
     console.log(err);
     process.exit(1);
@@ -20,9 +19,13 @@ mongodb.MongoClient.connect(config.db_uri || process.env.MONGODB_URI, function 
   db = database;
   console.log("Database connection ready");
 
+  // Enabling React front-end
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + './react-front/build/index.html'));
+  });
+
   // Initialize the app.
   const port = process.env.PORT || 8080;
   app.listen(port);
+  console.log("Server listening port " + port);
 });
-
-// CONTACTS API ROUTES BELOW
