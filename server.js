@@ -1,8 +1,9 @@
 var express = require("express");
 var mongodb = require("mongodb");
+
 let config;
 try {
-  var config = require("./config");
+  config = require("./config");
 } catch (error) {
 }
 
