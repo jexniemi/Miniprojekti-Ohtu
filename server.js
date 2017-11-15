@@ -1,10 +1,11 @@
 var express = require("express");
 var mongodb = require("mongodb");
 
-let config;
+let uri;
 try {
-  config = require("./config");
+  uri = require("./config").db_uri;
 } catch (error) {
+  uri = process.env.MONGODB_URI;
 }
 
 var app = express();
@@ -14,7 +15,7 @@ app.use(express.static(__dirname + "/react-front/public"));
 var db;
 
 // Connect to the database before starting the application server.
-mongodb.MongoClient.connect(config.db_uri || process.env.MONGODB_URI, function (err, database) {
+mongodb.MongoClient.connect(uri, function (err, database) {
   if (err) {
     console.log(err);
     process.exit(1);
