@@ -26,8 +26,9 @@ mongodb.MongoClient.connect(uri, function (err, database) {
   console.log("Database connection ready");
 
   // Enabling React front-end
+  app.use(express.static(path.resolve(__dirname, './react-front/build')));
   app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + './react-front/build'));
+    res.sendFile(path.join(__dirname + './react-front/build/index.html'));
   });
 
   // Initialize the app.
