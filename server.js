@@ -3,7 +3,6 @@ var mongodb = require("mongodb");
 
 var app = express();
 app.use(express.static(__dirname + "/react-front/public"));
-app.use(bodyParser.json());
 
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
 var db;
