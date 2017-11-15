@@ -22,15 +22,15 @@ mongodb.MongoClient.connect(uri, function (err, database) {
   // Save database object from the callback for reuse.
   db = database;
   console.log("Database connection ready");
-
-  // Enabling React front-end
-  app.use(express.static(path.resolve(__dirname, './react-front/build')));
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + './react-front/build/index.html'));
-  });
-
-  // Initialize the app.
-  const port = process.env.PORT || 8080;
-  app.listen(port);
-  console.log("Server listening port " + port);
 });
+
+// Enabling React front-end
+app.use(express.static(path.resolve(__dirname, './react-front/build')));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + './react-front/build/index.html'));
+});
+
+// Initialize the app.
+const port = process.env.PORT || 8080;
+app.listen(port);
+console.log("Server listening port " + port);
