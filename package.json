@@ -19,6 +19,11 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
+<<<<<<< HEAD
     "mongodb": "^2.2.33"
+=======
+    "mongodb": "^2.2.33",
+    "path": "^0.12.7"
+>>>>>>> 0e8b86c411285552f55df0d6a1a6ca13b7cbcc6f
   }
 }

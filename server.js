@@ -1,16 +1,20 @@
 var express = require("express");
 var mongodb = require("mongodb");
-var config = require("./config");
+var path = require("path");
+
+let uri;
+try {
+  uri = require("./config").dburi;
+} catch (error) {
+  uri = process.env.MONGODB_URI;
+}
 
 var app = express();
-app.use(express.static(__dirname + "/react-front/public"));
-
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
 var db;
 
 // Connect to the database before starting the application server.
-// mongodb.MongoClient.connect(process.env.MONGODB_URI, function (err, database) {
-mongodb.MongoClient.connect(config.db_uri || process.env.MONGODB_URI, function (err, database) {
+mongodb.MongoClient.connect(uri, function (err, database) {
   if (err) {
     console.log(err);
     process.exit(1);
@@ -19,10 +23,15 @@ mongodb.MongoClient.connect(config.db_uri || process.env.MONGODB_URI, function 
   // Save database object from the callback for reuse.
   db = database;
   console.log("Database connection ready");
-
-  // Initialize the app.
-  const port = process.env.PORT || 8080;
-  app.listen(port);
 });
 
-// CONTACTS API ROUTES BELOW
+// Enabling React front-end
+app.use(express.static(path.resolve(__dirname, './react-front/build')));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + './react-front/build/index.html'));
+});
+
+// Initialize the app.
+const port = process.env.PORT || 8080;
+app.listen(port);
+console.log("Server listening port " + port);
