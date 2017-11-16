@@ -6,11 +6,14 @@ var database = require("./database");
 
 var app = express();
 
-// Enabling React front-end
-app.use(express.static(path.resolve(__dirname, './react-front/build')));
-
 // Setting up controllers
 controllers(app);
+
+// Enabling React front-end
+app.get("/", function (req, res) {
+  res.redirect("/index");
+});
+app.use(express.static(path.resolve(__dirname, './react-front/build')));
 
 // Initialize database
 database.connect();
