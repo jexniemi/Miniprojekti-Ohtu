@@ -1,6 +1,6 @@
 var express = require("express");
-var mongodb = require("mongodb");
 var path = require("path");
+
 var controllers = require("./controllers");
 var database = require("./database");
 

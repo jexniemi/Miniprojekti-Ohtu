@@ -10,17 +10,14 @@ try {
 }
 
 // Create a database variable outside of the database connection callback to reuse the connection pool
-var db;
+let db;
 class database {
     // Connect to the database
     connect() {
         if (db) return;
 
         mongodb.MongoClient.connect(uri, function (err, database) {
-            if (err) {
-                console.log(err);
-                process.exit(1);
-            }
+            if (err) throw err;
 
             // Save database object from the callback for reuse
             db = database;
