@@ -31,9 +31,7 @@ class database {
     // Get all tips and call callback function
     getAllTips(callback) {
         db.collection(TIPS_COLLECTION).find({}).toArray(function (err, docs) {
-            if (err) throw err;
-
-            callback(docs);
+            callback(err, docs);
         });
     }
 }
