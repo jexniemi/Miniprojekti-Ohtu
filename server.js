@@ -11,6 +11,8 @@ try {
 
 var app = express();
 
+var TIPS_COLLECTION = "TIPS";
+
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
 var db;
 
@@ -27,9 +29,10 @@ mongodb.MongoClient.connect(uri, function (err, database) {
 });
 
 // Enabling React front-end
-app.use(express.static(path.resolve(__dirname, './react-front/build')));
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + './react-front/build/index.html'));
+// app.use(express.static(path.resolve(__dirname, './react-front/build')));
+app.get('/', (req, res) => {
+  app.use(express.static(path.resolve(__dirname, './react-front/build')));
+  res.sendFile(path.join(__dirname + '/react-front/build/index.html'));
 });
 
 
@@ -39,24 +42,24 @@ app.listen(port);
 console.log("Server listening port " + port);
 
 
+// Functions
+function handleError(res, reason, message, code) {
+  console.log("ERROR: " + reason);
+  res.status(code || 500).json({"error": message});
+}
+
 // Routes
 app.get("/tips", function(req, res) {
+  db.collection(TIPS_COLLECTION).find({}).toArray(function(err, docs) {
+    if (err) {
+      handleError(res, err.message, "Failed to get tips.");
+    } else {
+      res.status(200).json(docs);
+    }
+  });
 });
 
 app.post("/tips", function(req, res) {
-  var newTip = req.body;
-  
-  if (!(req.body.title || req.body.writer)) {
-    handleError(res, "Invalid user input", "Provide title and writer.", 400);
-  }
-
-  db.collection(TIPS_COLLECTION).insertOne(newTip, function(err, doc) {
-    if (err) {
-      handleError(res, err.message, "Failed to create new tip.");
-    } else {
-      res.status(201).json(doc.ops[0]);
-    }
-  });
 });
 
 app.get("/tips/:id", function(req, res) {
