@@ -1,5 +1,7 @@
+// Get the database object
 var database = require("../database");
 
+// Different routes
 module.exports = function (app) {
     app.get("/api", function (req, res) {
         res.send("/tips for all tips, /tips/:id for a specific tip");
