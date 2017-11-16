@@ -8,7 +8,7 @@ module.exports = function (app) {
     });
 
     app.get("/api/tips", function (req, res) {
-        var tips = database.getAllTips((result) => res.status(200).json(result));
+        database.getAllTips((result) => res.status(200).json(result));
     });
 
     app.post("api/tips", function (req, res) {

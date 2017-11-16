@@ -1,5 +1,7 @@
 var mongodb = require("mongodb");
 const TIPS_COLLECTION = "TIPS";
+
+// figure out URI for database
 let uri;
 try {
     uri = require("../config").dburi;
@@ -12,6 +14,8 @@ var db;
 class database {
     // Connect to the database
     connect() {
+        if (db) return;
+
         mongodb.MongoClient.connect(uri, function (err, database) {
             if (err) {
                 console.log(err);
