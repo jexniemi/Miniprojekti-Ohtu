@@ -7,11 +7,11 @@ class InputForm extends React.Component {
         return (
             <form>
                 <label>
-                    Otsikko: <br />
+                    Title: <br />
                     <input type="text" name="otsikko" />
                 </label> <br />
                 <label>
-                    Kirjoittaja: <br />
+                    Author: <br />
                     <input type="text" name="kirjoittaja" />
                 </label> <br />
                 <input type="submit" value="Tallenna" />
