@@ -30,10 +30,7 @@ mongodb.MongoClient.connect(uri, function (err, database) {
 
 // Enabling React front-end
 // app.use(express.static(path.resolve(__dirname, './react-front/build')));
-app.get('/', (req, res) => {
-  app.use(express.static(path.resolve(__dirname, './react-front/build')));
-  res.sendFile(path.join(__dirname + '/react-front/build/index.html'));
-});
+app.use(express.static(path.resolve(__dirname, './react-front/build')));
 
 
 // Initialize the app.
@@ -45,12 +42,12 @@ console.log("Server listening port " + port);
 // Functions
 function handleError(res, reason, message, code) {
   console.log("ERROR: " + reason);
-  res.status(code || 500).json({"error": message});
+  res.status(code || 500).json({ "error": message });
 }
 
 // Routes
-app.get("/tips", function(req, res) {
-  db.collection(TIPS_COLLECTION).find({}).toArray(function(err, docs) {
+app.get("/tips", function (req, res) {
+  db.collection(TIPS_COLLECTION).find({}).toArray(function (err, docs) {
     if (err) {
       handleError(res, err.message, "Failed to get tips.");
     } else {
@@ -59,15 +56,15 @@ app.get("/tips", function(req, res) {
   });
 });
 
-app.post("/tips", function(req, res) {
+app.post("/tips", function (req, res) {
 });
 
-app.get("/tips/:id", function(req, res) {
+app.get("/tips/:id", function (req, res) {
 });
 
-app.put("/tips/:id", function(req, res) {
+app.put("/tips/:id", function (req, res) {
 });
 
-app.delete("/tips/:id", function(req, res) {
+app.delete("/tips/:id", function (req, res) {
 });
 
