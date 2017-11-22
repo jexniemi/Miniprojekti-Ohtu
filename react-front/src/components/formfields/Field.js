@@ -1,9 +1,9 @@
 import React from 'react';
 
-var formControl = require('react-bootstrap').FormControl;
-var controlLabel = require('react-bootstrap').ControlLabel;
+var FormControl = require('react-bootstrap').FormControl;
+var ControlLabel = require('react-bootstrap').ControlLabel;
 
-class FormControl extends React.Component {
+class Field extends React.Component {
     constructor(props) {
         super(props);
 
@@ -19,13 +19,14 @@ class FormControl extends React.Component {
 
     handleChange(e) {
         this.setState({input: e.target.value})
+        this.props.onChange(e);
     }
 
 
     render() {
         return (
             <div>
-                <ControlLabel>{this.props.title}}</ControlLabel>
+                <ControlLabel>{this.props.title}</ControlLabel>
                 <FormControl
                     type="text"
                     value={this.state.input}
@@ -36,3 +37,5 @@ class FormControl extends React.Component {
         );
     }
 }
+
+export default Field;
