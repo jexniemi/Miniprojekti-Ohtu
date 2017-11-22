@@ -12,7 +12,7 @@ module.exports = function (app) {
     });
 
     app.post("api/tips", function (req, res) {
-        res.send("TODO");
+        database.postTip(req.body, (result) => res.status(200).json(result));
     });
 
     app.get("api/tips/:id", function (req, res) {
