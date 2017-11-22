@@ -1,7 +1,8 @@
 import React from 'react';
 
-import InputForm from './components/InputForm.js';
 import NavigationBar from './components/NavigationBar';
+import SubmitForm from './components/SubmitForm';
+import './App.css';
 
 class App extends React.Component {
   render() {
@@ -9,7 +10,9 @@ class App extends React.Component {
       <div>
         <NavigationBar />
         <h1>Lukuvinkkikirjasto</h1>
-        < InputForm />
+        <div className="PostForm">
+        <SubmitForm/>
+        </div>
       </div>
     );
   }
