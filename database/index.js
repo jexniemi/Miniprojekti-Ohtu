@@ -32,8 +32,9 @@ class database {
         });
     }
 
-    postTip(newPerson, callback) {
-        db.collection(TIPS_COLLECTION).insertOne(newPerson, function(err, doc) {
+    // Post a new tip and call callback function
+    postTip(newTip, callback) {
+        db.collection(TIPS_COLLECTION).insertOne(newTip, function(err, doc) {
             callback(err, doc.ops[0]);
         });
     }

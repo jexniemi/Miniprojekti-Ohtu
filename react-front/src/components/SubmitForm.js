@@ -8,12 +8,10 @@ var FormGroup = require('react-bootstrap').FormGroup;
 class SubmitForm extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
             author: "",
             title: ""
         }
-
         this.postForm = this.postForm.bind(this);
     }
 

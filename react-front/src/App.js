@@ -11,7 +11,7 @@ class App extends React.Component {
         <NavigationBar />
         <h1>Lukuvinkkikirjasto</h1>
         <div className="PostForm">
-        <SubmitForm/>
+          <SubmitForm />
         </div>
       </div>
     );
