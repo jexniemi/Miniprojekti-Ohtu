@@ -18,8 +18,8 @@ class Field extends React.Component {
     }
 
     handleChange(e) {
-        this.setState({input: e.target.value})
-        this.props.onChange(e);
+        this.setState({input: e.target.value});
+        this.props.onChange(e.target.value);
     }
 
 

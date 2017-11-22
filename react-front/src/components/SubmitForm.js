@@ -1,5 +1,6 @@
 import React from 'react';
 import Field from './formfields/Field';
+import $ from "jquery";
 
 var Button = require('react-bootstrap').Button;
 var FormGroup = require('react-bootstrap').FormGroup;
@@ -14,39 +15,26 @@ class SubmitForm extends React.Component {
         }
 
         this.postForm = this.postForm.bind(this);
-        this.authorOnChange = this.authorOnChange.bind(this);
-        this.titleOnChange = this.titleOnChange.bind(this);
     }
 
     postForm() {
-        console.log("aa");
-        fetch('/api/tips', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
+        $.ajax({
+            type: "POST",
+            url: "/api/tips",
+            data: {
                 author: this.state.author,
                 title: this.state.title
-            })
-        })
-    }
-
-    authorOnChange(e) {
-        this.setState({ author: e });
-    }
-
-    titleOnChange(e) {
-        this.setState({ title: e })
+            },
+            dataType: "application/json"
+        });
     }
 
     render() {
         return (
             <form>
                 <FormGroup>
-                    <Field title="Author:" onChange={this.authorOnChange} />
-                    <Field title="Title:" onChange={this.titleOnChange} />
+                    <Field title="Author:" onChange={(author) => this.setState({ author: author })} />
+                    <Field title="Title:" onChange={(title) => this.setState({ title: title })} />
                 </FormGroup>
                 <Button onClick={() => this.postForm()}>Submit</Button>
             </form>
