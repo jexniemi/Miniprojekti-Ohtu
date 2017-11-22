@@ -12,14 +12,7 @@ module.exports = function (app) {
     });
 
     app.post("api/tips", function (req, res) {
-        database.insertOne(req.body, function(err, doc) {
-          if (err) {
-            handleError(res, err.message, "Failed to create");
-          } else {
-            res.status(201).json(doc.ops[0]);
-          }
-        });
-        res.send("posted");
+        database.postTip(req.body, (result) => res.status(200).json(result));
     });
 
     app.get("api/tips/:id", function (req, res) {
