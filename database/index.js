@@ -34,8 +34,7 @@ class database {
 
     postTip(newPerson, callback) {
         db.collection(TIPS_COLLECTION).insertOne(newPerson, function(err, doc) {
-            if (err) throw err;
-            callback(doc.ops[0]);
+            callback(err, doc.ops[0]);
         });
     }
 }

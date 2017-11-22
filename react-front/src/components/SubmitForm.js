@@ -18,36 +18,37 @@ class SubmitForm extends React.Component {
         this.titleOnChange = this.titleOnChange.bind(this);
     }
 
-  postForm($author, $title) {
-    fetch('/api/tips', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        author: this.state.author,
-        title: this.state.title
-      })
-    })
-  }
+    postForm() {
+        console.log("aa");
+        fetch('/api/tips', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                author: this.state.author,
+                title: this.state.title
+            })
+        })
+    }
 
-  authorOnChange(e) {
-      this.setState({author: e});
-  }
+    authorOnChange(e) {
+        this.setState({ author: e });
+    }
 
-  titleOnChange(e) {
-      this.setState({title: e})
-  }
+    titleOnChange(e) {
+        this.setState({ title: e })
+    }
 
     render() {
         return (
             <form>
                 <FormGroup>
-                <Field title="Author:" onChange={this.authorOnChange}/>
-                <Field title="Title:" onChange={this.titleOnChange}/>
+                    <Field title="Author:" onChange={this.authorOnChange} />
+                    <Field title="Title:" onChange={this.titleOnChange} />
                 </FormGroup>
-                <Button onClick={this.postForm}>Submit</Button>
+                <Button onClick={() => this.postForm()}>Submit</Button>
             </form>
         );
     }
