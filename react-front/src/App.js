@@ -8,13 +8,13 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      books: []
+      books: [{}, {}]
     }
 
     this.getBooks = this.getBooks.bind(this);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.getBooks();
   }
 
@@ -34,7 +34,8 @@ class App extends React.Component {
         </div>
         <BookList books={this.state.books}/>
         <p>Books length: {this.state.books.length}</p>
-        <p>test book author:</p>
+        <p>Book suggestion from api: {JSON.stringify(this.state.books[1])}</p>
+        <p>test book author: {this.state.books[1].author}</p>
       </div>
     );
   }
