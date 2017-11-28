@@ -16,6 +16,10 @@ class SubmitForm extends React.Component {
     }
 
     postForm() {
+        this.setState({
+            author: "",
+            title: ""
+        })
         $.ajax({
             type: "POST",
             url: "/api/tips",
@@ -31,8 +35,13 @@ class SubmitForm extends React.Component {
         return (
             <form>
                 <FormGroup>
-                    <Field title="Author:" onChange={(author) => this.setState({ author: author })} />
-                    <Field title="Title:" onChange={(title) => this.setState({ title: title })} />
+                    <label>Author:</label>
+                    <br />
+                    <input type="text" onChange={(e) => this.setState({ author: e.target.value })} value={this.state.author} />
+                    <br />
+                    <label>Book's title:</label>
+                    <br />
+                    <input type="text" onChange={(e) => this.setState({ title: e.target.value })} value={this.state.title} />
                 </FormGroup>
                 <Button onClick={() => this.postForm()}>Submit</Button>
             </form>
