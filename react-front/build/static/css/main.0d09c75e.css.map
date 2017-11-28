@@ -1,1 +1,1 @@
-{"version":3,"sources":["App.css"],"names":[],"mappings":"AAAA,UACI,cACA,gBAAkB","file":"static/css/main.0d09c75e.css","sourcesContent":[".PostForm {\n    max-width: 20%;\n    margin-left: 20px;\n}\n\n\n// WEBPACK FOOTER //\n// ./src/App.css"],"sourceRoot":""}
+{"version":3,"sources":["App.css"],"names":[],"mappings":"AAAA,UACI,cACA,gBAAkB","file":"static/css/main.0d09c75e.css","sourcesContent":[".PostForm {\r\n    max-width: 20%;\r\n    margin-left: 20px;\r\n}\n\n\n// WEBPACK FOOTER //\n// ./src/App.css"],"sourceRoot":""}
