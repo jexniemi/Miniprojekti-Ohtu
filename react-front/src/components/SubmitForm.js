@@ -4,6 +4,8 @@ import $ from "jquery";
 
 var Button = require('react-bootstrap').Button;
 var FormGroup = require('react-bootstrap').FormGroup;
+var FormControl = require('react-bootstrap').FormControl;
+var ControlLabel = require('react-bootstrap').ControlLabel;
 
 class SubmitForm extends React.Component {
     constructor(props) {
@@ -35,13 +37,10 @@ class SubmitForm extends React.Component {
         return (
             <form>
                 <FormGroup>
-                    <label>Author:</label>
-                    <br />
-                    <input type="text" onChange={(e) => this.setState({ author: e.target.value })} value={this.state.author} />
-                    <br />
-                    <label>Book's title:</label>
-                    <br />
-                    <input type="text" onChange={(e) => this.setState({ title: e.target.value })} value={this.state.title} />
+                    <ControlLabel>Author:</ControlLabel>
+                    <FormControl type="text" onChange={(e) => this.setState({ author: e.target.value })} value={this.state.author} />
+                    <ControlLabel>Book title:</ControlLabel>
+                    <FormControl type="text" onChange={(e) => this.setState({ title: e.target.value })} value={this.state.title} />
                 </FormGroup>
                 <Button onClick={() => this.postForm()}>Submit</Button>
             </form>
