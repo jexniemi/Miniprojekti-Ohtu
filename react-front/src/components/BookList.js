@@ -1,5 +1,5 @@
 import React from 'react';
-import $  from "jquery";
+import Tip from "./Tip";
 
 class BookList extends React.Component {
     constructor(props) {
@@ -8,7 +8,7 @@ class BookList extends React.Component {
 
     render() {
         var renderBooks = this.props.books.map((b, id) =>
-            <p>{b.author}: {b.title} <span style={styles.edit} onClick={(b) => this.edit(b)}>edit</span></p>
+            <Tip book={b} />
         )
 
         return (
@@ -17,17 +17,9 @@ class BookList extends React.Component {
             </div>
         )
     }
-
-    edit(b) {
-        alert(b);
-    }
 }
 
 const styles = {
-    edit: {
-        cursor: "pointer",
-        color: "blue"
-    }
 }
 
 export default BookList;
