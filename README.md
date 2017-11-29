@@ -9,4 +9,6 @@ dokumentoitu, integroitu muuhun ohjelmistoon ja viety
 tuotantoympäristöön
 
 
+Testikattavuus 'here'
+
 Ohtustats-id: 5a097c5a14d85c002869604e
