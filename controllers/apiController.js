@@ -22,12 +22,17 @@ module.exports = function (app) {
     app.post("/api/tips", function (req, res) {
         database.postTip(req.body, function (err, result) {
             if (err) throw err;
+
             res.status(200).json(result)
         });
     });
 
-    app.get("/api/tips/:id", function (req, res) {
-        res.send("TODO");
+    app.put("/api/tips", function (req, res) {
+        database.putTip(req.body, function (err, result) {
+            if (err) throw err;
+
+            res.status(200).json(result);
+        });
     });
 
     app.put("/api/tips/:id", function (req, res) {

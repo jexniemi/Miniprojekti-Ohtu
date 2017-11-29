@@ -25,18 +25,28 @@ class database {
         });
     }
 
-    // Get all tips and call callback function
+    // Get all tips
     getAllTips(callback) {
         db.collection(TIPS_COLLECTION).find({}).toArray(function (err, docs) {
             callback(err, docs);
         });
     }
 
-    // Post a new tip and call callback function
+    // Create a new tip
     postTip(newTip, callback) {
-        db.collection(TIPS_COLLECTION).insertOne(newTip, function(err, doc) {
+        db.collection(TIPS_COLLECTION).insertOne(newTip, function (err, doc) {
             callback(err, doc.ops[0]);
         });
+    }
+
+    // Put/update a tip
+    putTip(updatedTip, callback) {
+        var _id = updatedTip._id;
+        delete updatedTip._id;
+        db.collection(TIPS_COLLECTION).updateOne({ _id: _id }, { $set: updatedTip },
+            function (err, result) {
+                callback(err, result);
+            });
     }
 }
 
