@@ -20,24 +20,32 @@ class App extends React.Component {
 
   getBooks = () => {
     fetch('/api/tips')
-    .then(res => res.json())
-    .then(books => this.setState({ books }));
+      .then(res => res.json())
+      .then(books => this.setState({ books }));
   }
 
   render() {
     return (
-      <div className="Wrapper" style={{margin: "0 auto"}}>
+      <div className="Wrapper">
         <NavigationBar />
-        <h1>Lukuvinkkikirjasto</h1>
-        <div className="PostForm">
-          <SubmitForm />
+        <div style={styles.container} >
+          <h1>Lukuvinkkikirjasto</h1>
+          <div className="PostForm">
+            <SubmitForm />
+          </div>
+          <div style={styles.container}>
+            <h2>Tips: </h2>
+            <BookList books={this.state.books} />
+          </div>
         </div>
-        <BookList books={this.state.books}/>
-        <p>Books length: {this.state.books.length}</p>
-        <p>Book suggestion from api: {JSON.stringify(this.state.books[1])}</p>
-        <p>test book author: {this.state.books[1].author}</p>
       </div>
     );
+  }
+}
+
+const styles = {
+  container: {
+    marginLeft: "1%"
   }
 }
 

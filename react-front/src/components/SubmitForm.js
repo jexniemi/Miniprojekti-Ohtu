@@ -21,7 +21,7 @@ class SubmitForm extends React.Component {
         this.setState({
             author: "",
             title: ""
-        })
+        });
         $.ajax({
             type: "POST",
             url: "/api/tips",
