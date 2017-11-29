@@ -41,7 +41,7 @@ class database {
 
     // Put/update a tip
     putTip(updatedTip, callback) {
-        var _id = updatedTip._id;
+        var _id = mongodb.ObjectID(updatedTip._id);
         delete updatedTip._id;
         db.collection(TIPS_COLLECTION).updateOne({ _id: _id }, { $set: updatedTip },
             function (err, result) {
