@@ -31,6 +31,7 @@ class SubmitForm extends React.Component {
             },
             dataType: "application/json"
         });
+        this.props.refreshTips();
     }
 
     render() {

@@ -31,7 +31,7 @@ class App extends React.Component {
         <div style={styles.container} >
           <h1>Lukuvinkkikirjasto</h1>
           <div className="PostForm">
-            <SubmitForm />
+            <SubmitForm refreshTips={this.getBooks}/>
           </div>
           <div style={styles.container}>
             <h2>Tips: </h2>
