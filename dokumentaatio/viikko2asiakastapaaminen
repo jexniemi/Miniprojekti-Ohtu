@@ -1,0 +1,19 @@
+Viikko 2
+--------
+
++Lisää päivittäinen työmäärä sprint backlogiin
++testeihin täydet pisteet jos lisää myös back testit
++npmjs celenium cucumber testaus sivulta apua testaukseen
++pitää saada fronttitestit travikseen (tehty)
++testikattavuus näkymään prosentteina esim. coverals plugin, ava conffaa se travisiin
+
+Viikko 3
+--------
+
++haku ja selailu ja poistaminen
++travis toimimaan tähän sprinttiin
++tipsit omalle sivulle
++edittauksesta pois jos ei halua muokkaa, ruksi pois
++vinkkejä youtube urlin perusteella, otsikko ja mitä video käsittelee
++
+
