@@ -11,7 +11,7 @@ it('renders without crashing', () => {
   ReactDOM.render(<Tip book={{ title: 'test', author: 'test' }} />, div);
 });
 
-test('enzyme', () => {
+test('Tip renders correct text', () => {
   const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test' }} />);
   expect(t.text()).toEqual('test: test edit');
 });

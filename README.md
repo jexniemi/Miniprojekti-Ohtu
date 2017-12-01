@@ -9,4 +9,6 @@ dokumentoitu, integroitu muuhun ohjelmistoon ja viety
 tuotantoympäristöön
 
 
+Testikattavuus 'For now, go to /react-front -> npm test'
+
 Ohtustats-id: 5a097c5a14d85c002869604e
