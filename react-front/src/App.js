@@ -1,27 +1,11 @@
 import React from 'react';
 import BookList from './components/BookList';
 import NavigationBar from './components/NavigationBar';
-import SubmitForm from './components/SubmitForm';
 import './App.css';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      books: [{}, {}]
-    }
-
-    this.getBooks = this.getBooks.bind(this);
-  }
-
-  componentWillMount() {
-    this.getBooks();
-  }
-
-  getBooks = () => {
-    fetch('/api/tips')
-      .then(res => res.json())
-      .then(books => this.setState({ books }));
   }
 
   render() {
@@ -30,12 +14,8 @@ class App extends React.Component {
         <NavigationBar />
         <div style={styles.container} >
           <h1>Lukuvinkkikirjasto</h1>
-          <div className="PostForm">
-            <SubmitForm refreshTips={this.getBooks}/>
-          </div>
           <div style={styles.container}>
-            <h2>Tips: </h2>
-            <BookList books={this.state.books} />
+            <BookList />
           </div>
         </div>
       </div>

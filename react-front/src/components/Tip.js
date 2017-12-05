@@ -9,6 +9,9 @@ class Tip extends React.Component {
             title: "",
             editing: false
         }
+
+        this.renderEdit = this.renderEdit.bind(this);
+        this.delete = this.delete.bind(this);
     }
 
     componentDidMount() {
@@ -32,9 +35,20 @@ class Tip extends React.Component {
                 <input type="text" value={this.state.title}
                     onChange={(e) => this.setState({ title: e.target.value })} />
 
-                <span style={styles.edit} onClick={() => this.update()}>done</span>
+                <span style={styles.complete} onClick={() => this.update()}><i class="fa fa-check" aria-hidden="true"></i></span>
+                <span style={styles.delete} onClick={() => this.delete()}><i class="fa fa-trash" aria-hidden="true"></i></span>
             </div>
         );
+    }
+
+    delete() {
+        this.changeEditing();
+        this.props.removeBook(this.props.book._id)
+        $.ajax({
+            type: "DELETE",
+            url: "/api/tips/" + this.props.book._id,
+            dataType: "application/json"
+        });
     }
 
     update() {
@@ -63,7 +77,7 @@ class Tip extends React.Component {
             <div>
                 {this.state.editing && this.renderEdit()}
                 {!this.state.editing && <p>{author}: {title} <span style={styles.edit}
-                    onClick={() => this.changeEditing()}>edit</span></p>}
+                    onClick={() => this.changeEditing()}><i class="fa fa-pencil" aria-hidden="true"></i></span></p>}
             </div>
         )
     }
@@ -71,8 +85,16 @@ class Tip extends React.Component {
 
 const styles = {
     edit: {
+        cursor: "pointer"
+    },
+    complete: {
+        margin: "0% 1% 0% 1%",
         cursor: "pointer",
-        color: "blue"
+        color: "green"
+    },
+    delete: {
+        cursor: "pointer",
+        color: "red"
     }
 }
 
