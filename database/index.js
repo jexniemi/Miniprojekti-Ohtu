@@ -48,6 +48,14 @@ class database {
                 callback(err, result);
             });
     }
+
+    // Delete a tip
+    deleteTip(_id, callback) {
+        _id = mongodb.ObjectID(_id);
+        db.collection(TIPS_COLLECTION).deleteOne({_id: _id}, function (err, result) {
+            callback(err, result);
+        });
+    }
 }
 
 module.exports = new database;

@@ -35,11 +35,11 @@ module.exports = function (app) {
         });
     });
 
-    app.put("/api/tips/:id", function (req, res) {
-        res.send("TODO");
-    });
-
     app.delete("/api/tips/:id", function (req, res) {
-        res.send("TODO");
+        database.deleteTip(req.params.id, function (err, result) {
+            if (err) throw err;
+
+            res.status(200).json(result);
+        });
     });
 }
