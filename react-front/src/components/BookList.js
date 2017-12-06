@@ -2,6 +2,10 @@ import React from 'react';
 import Tip from "./Tip";
 import SubmitForm from './SubmitForm';
 
+var Button = require('react-bootstrap').Button;
+var FormControl = require('react-bootstrap').FormControl;
+var FormGroup = require('react-bootstrap').FormGroup;
+
 class BookList extends React.Component {
     constructor(props) {
         super(props);
@@ -40,7 +44,14 @@ class BookList extends React.Component {
                     <SubmitForm refreshTips={this.getBooks} />
                 </div>
                 <h2>Tips: </h2>
-                <div className="Tips" style={{marginLeft: '5px'}}>
+                <div className="Tips" style={{ marginLeft: '5px' }}>
+                    <div className="Search" style={{maxWidth: '20%'}}>
+                    <FormGroup>
+                        <FormControl type="text" placeholder="Search" />
+                    </FormGroup>
+                    </div>
+                    {' '}
+                    <Button type="submit">Submit</Button>
                     {renderBooks}
                 </div>
             </div>
