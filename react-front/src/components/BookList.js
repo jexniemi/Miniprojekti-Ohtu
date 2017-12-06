@@ -41,12 +41,13 @@ class BookList extends React.Component {
     }
 
     addBook(book) {
-        var newBooks = this.state.books;
+        var newBooks = this.state.bookList;
         newBooks.push(book);
         this.setState({
             books: newBooks,
             bookList: newBooks
         });
+        this.getBooks();
     }
 
     render() {
