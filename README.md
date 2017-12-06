@@ -9,6 +9,6 @@ dokumentoitu, integroitu muuhun ohjelmistoon ja viety
 tuotantoympäristöön
 
 
-Testikattavuus '<Your path>/Miniprojekti-Ohtu/react-front/coverage/lcov-report/index.html'
+Testikattavuus 'Your-Path-Here/Miniprojekti-Ohtu/react-front/coverage/lcov-report/index.html'
 
 Ohtustats-id: 5a097c5a14d85c002869604e
