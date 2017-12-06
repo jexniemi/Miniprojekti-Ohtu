@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "cd react-front && npm test",
-    "travis": "cd react-front && npm test"
+    "travis": "cd react-front && npm install && npm test"
   },
   "repository": {
     "type": "git",
