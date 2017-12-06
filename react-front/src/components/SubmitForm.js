@@ -22,19 +22,14 @@ class SubmitForm extends React.Component {
             author: "",
             title: ""
         });
-        $.ajax({
-            type: "POST",
-            url: "/api/tips",
-            data: {
+        fetch("/api/tips", {
+            method: "POST",
+            body: JSON.stringify({
                 author: this.state.author,
                 title: this.state.title
-            },
-            dataType: "application/json"
-        });
-        this.props.refreshTips({
-            author: this.state.author,
-            title: this.state.title
-        });
+            }),
+            headers: { "Content-Type": "application/json" }
+        }).then(this.props.refreshTips());
     }
 
     render() {

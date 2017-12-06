@@ -15,7 +15,6 @@ class BookList extends React.Component {
         };
         this.getBooks = this.getBooks.bind(this);
         this.removeBook = this.removeBook.bind(this);
-        this.addBook = this.addBook.bind(this);
     }
 
     componentDidMount() {
@@ -29,20 +28,13 @@ class BookList extends React.Component {
                 this.setState({
                 books: books,
                 bookList: books
-            })});
+            })}).catch(function() {
+                console.log('notice me');
+            });
     }
 
     removeBook(_id) {
         var newBooks = this.state.books.filter(book => book._id !== _id);
-        this.setState({
-            books: newBooks,
-            bookList: newBooks
-        });
-    }
-
-    addBook(book) {
-        var newBooks = this.state.books;
-        newBooks.push(book);
         this.setState({
             books: newBooks,
             bookList: newBooks
@@ -57,8 +49,8 @@ class BookList extends React.Component {
         return (
             <div>
                 <div className="PostForm">
-                <h2> Submit suggestions </h2>
-                    <SubmitForm refreshTips={this.addBook} />
+                    <h2> Submit suggestions </h2>
+                        <SubmitForm refreshTips={this.getBooks} />
                 </div>
                 <div className="Tips" style={{ marginLeft: '5px' }}>
                     <h2> Book suggestions </h2>
@@ -74,7 +66,7 @@ class BookList extends React.Component {
                             }} type="text" placeholder="filter" />
                         </FormGroup>
                         <div style={{marginLeft: "15px"}}>
-                        {renderBooks}
+                            {renderBooks}
                         </div>
                     </div>
                 </div>
