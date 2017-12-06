@@ -32,6 +32,7 @@ class Tip extends React.Component {
                 <input type="text" value={this.state.author}
                     onChange={(e) => this.setState({ author: e.target.value })} />
 
+                <br />
                 <input type="text" value={this.state.title}
                     onChange={(e) => this.setState({ title: e.target.value })} />
 
