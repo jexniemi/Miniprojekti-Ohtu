@@ -31,7 +31,10 @@ class SubmitForm extends React.Component {
             },
             dataType: "application/json"
         });
-        this.props.refreshTips();
+        this.props.refreshTips({
+            author: this.state.author,
+            title: this.state.title
+        });
     }
 
     render() {
