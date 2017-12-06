@@ -4,7 +4,7 @@
   "description": "id 5a097c5a14d85c002869604e",
   "main": "server.js",
   "scripts": {
-    "test": "cd react-front && npm test",
+    "test": "cd react-front && npm install && npm test",
     "travis": "cd react-front && npm test"
   },
   "repository": {
