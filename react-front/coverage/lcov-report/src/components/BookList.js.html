@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">80.77% </span>
+        <span class="strong">85.71% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>21/26</span>
+        <span class='fraction'>18/21</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>0/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">69.23% </span>
+        <span class="strong">75% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>9/13</span>
+        <span class='fraction'>9/12</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">80% </span>
+        <span class="strong">85% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>20/25</span>
+        <span class='fraction'>17/20</span>
       </div>
     </div>
   </div>
@@ -121,18 +121,7 @@
 76
 77
 78
-79
-80
-81
-82
-83
-84
-85
-86
-87
-88
-89
-90</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+79</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -142,22 +131,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -177,18 +165,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">9x</span>
@@ -202,10 +180,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -238,7 +216,6 @@ class BookList extends React.Component {
         };
         this.getBooks = this.getBooks.bind(this);
         this.removeBook = this.removeBook.bind(this);
-        this.addBook = this.addBook.bind(this);
     }
 &nbsp;
     componentDidMount() {
@@ -265,16 +242,6 @@ class BookList extends React.Component {
         });
     }
 &nbsp;
-    addBook(book) {
-        var newBooks = this.state.bookList;
-        newBooks.push(book);
-        this.setState({
-            books: newBooks,
-            bookList: newBooks
-        });
-        this.getBooks();
-    }
-&nbsp;
     render() {
         var renderBooks = this.state.bookList.map((b, id) =&gt;
             &lt;Tip key={b._id} book={b} removeBook={this.removeBook} /&gt;
@@ -284,17 +251,17 @@ class BookList extends React.Component {
             &lt;div&gt;
                 &lt;div className="PostForm"&gt;
                     &lt;h2&gt; Submit suggestions &lt;/h2&gt;
-                        &lt;SubmitForm refreshTips={this.addBook} /&gt;
+                        &lt;SubmitForm refreshTips={this.getBooks} /&gt;
                 &lt;/div&gt;
                 &lt;div className="Tips" style={{ marginLeft: '5px' }}&gt;
                     &lt;h2&gt; Book suggestions &lt;/h2&gt;
                     &lt;div className="Search"&gt;
                         &lt;FormGroup&gt;
-                            &lt;FormControl onChange={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; {
-                                var books = <span class="cstat-no" title="statement not covered" >this.state.books.filter(<span class="fstat-no" title="function not covered" >(b</span>ook) =&gt; {</span>
+                            &lt;FormControl onChange={(e) =&gt; {
+                                var books = this.state.books.filter(<span class="fstat-no" title="function not covered" >(b</span>ook) =&gt; {
 <span class="cstat-no" title="statement not covered" >                                    return (book.author.includes(e.target.value) || book.title.includes(e.target.value));</span>
                                 });
-<span class="cstat-no" title="statement not covered" >                                this.setState({</span>
+                                this.setState({
                                     bookList: books
                                 });
                             }} type="text" placeholder="filter" /&gt;
@@ -316,7 +283,7 @@ export default BookList;</pre></td></tr>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Dec 07 2017 00:42:49 GMT+0200 (Suomen normaaliaika)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Dec 07 2017 01:21:39 GMT+0200 (Suomen normaaliaika)
 </div>
 </div>
 <script src="..\..\prettify.js"></script>

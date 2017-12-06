@@ -17,8 +17,7 @@ it('renders', () => {
 
 test('removing books works', () => {
     const t = Enzyme.shallow(<BookList />);
-    t.instance().addBook({ _id: 1});
-    t.instance().addBook({ _id: 2});
+    t.setState({ books: [{ _id: 1 }, { _id: 2 }]});
     t.instance().removeBook(1);
     expect(t.state().books).toEqual([{"_id": 2}]);   
 });
@@ -28,10 +27,9 @@ test('getBooks can be called', () => {
     t.instance().getBooks();
 });
 
-test('adding books works', () => {
+test('can input text', () => {
     const t = Enzyme.shallow(<BookList />);
-    t.instance().addBook({ _id: 1});
-    expect(t.state().books).toEqual([{"_id": 1}]);  
+    t.find('FormControl').simulate('change');
 });
 
 it('renders without crashing', () => {

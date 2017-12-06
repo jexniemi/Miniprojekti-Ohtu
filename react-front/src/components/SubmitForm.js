@@ -29,6 +29,8 @@ class SubmitForm extends React.Component {
                 title: this.state.title
             }),
             headers: { "Content-Type": "application/json" }
+        }).catch(function() {
+            console.log('notice me');
         }).then(this.props.refreshTips());
     }
 
