@@ -18,8 +18,8 @@ class BookList extends React.Component {
 
     getBooks = () => {
         fetch('/api/tips')
-          .then(res => res.json())
-          .then(books => this.setState({ books }));
+            .then(res => res.json())
+            .then(books => this.setState({ books }));
     }
 
     removeBook(_id) {
@@ -37,10 +37,12 @@ class BookList extends React.Component {
         return (
             <div>
                 <div className="PostForm">
-                    <SubmitForm refreshTips={this.getBooks}/>
+                    <SubmitForm refreshTips={this.getBooks} />
                 </div>
                 <h2>Tips: </h2>
-                {renderBooks}
+                <div className="Tips" style={{marginLeft: '5px'}}>
+                    {renderBooks}
+                </div>
             </div>
         )
     }

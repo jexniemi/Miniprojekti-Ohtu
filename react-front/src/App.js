@@ -10,22 +10,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="Wrapper">
+      <div>
         <NavigationBar />
-        <div style={styles.container} >
+        <div className="Content">
           <h1>Lukuvinkkikirjasto</h1>
-          <div style={styles.container}>
-            <BookList />
-          </div>
+          <BookList />
         </div>
       </div>
     );
-  }
-}
-
-const styles = {
-  container: {
-    marginLeft: "1%"
   }
 }
 
