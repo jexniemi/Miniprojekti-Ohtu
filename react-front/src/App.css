@@ -13,6 +13,18 @@
     padding: 20px;
 }
 
+.PostForm {
+    float: right;
+    width: 20%;
+    margin-right: 10%;
+}
+
+.Tips {
+    float: left;
+    width: 20%;
+}
+
+
 h1 {
     font-family: "Comic Sans MS", cursive, sans-serif;
     color: rgb(95, 95, 95);

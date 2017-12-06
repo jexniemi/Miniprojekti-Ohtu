@@ -47,30 +47,31 @@ class BookList extends React.Component {
         return (
             <div>
                 <div className="PostForm">
+                <h2> Submit suggestions </h2>
                     <SubmitForm refreshTips={this.getBooks} />
                 </div>
-                <h2>Tips: </h2>
                 <div className="Tips" style={{ marginLeft: '5px' }}>
-                    <div className="Search" style={{maxWidth: '20%'}}>
-                    <FormGroup>
-                        <FormControl onChange={(e) => {
-                            var books = this.state.books.filter((book) => {
-                                return (book.author.includes(e.target.value) || book.title.includes(e.target.value));
-                            });
-                            this.setState({
-                                bookList: books
-                            });
-                        }} type="text" placeholder="filter" />
-                    </FormGroup>
+                    <h2> Book suggestions </h2>
+                    <div className="Search">
+                        <FormGroup>
+                            <FormControl onChange={(e) => {
+                                var books = this.state.books.filter((book) => {
+                                    return (book.author.includes(e.target.value) || book.title.includes(e.target.value));
+                                });
+                                this.setState({
+                                    bookList: books
+                                });
+                            }} type="text" placeholder="filter" />
+                        </FormGroup>
+                        <div style={{marginLeft: "10px"}}>
+                        {renderBooks}
+                        </div>
                     </div>
-                    {renderBooks}
                 </div>
             </div>
         )
     }
 }
 
-const styles = {
-}
 
 export default BookList;
