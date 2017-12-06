@@ -15,7 +15,6 @@ class BookList extends React.Component {
         };
         this.getBooks = this.getBooks.bind(this);
         this.removeBook = this.removeBook.bind(this);
-        this.addBook = this.addBook.bind(this);
     }
 
     componentDidMount() {
@@ -42,16 +41,6 @@ class BookList extends React.Component {
         });
     }
 
-    addBook(book) {
-        var newBooks = this.state.bookList;
-        newBooks.push(book);
-        this.setState({
-            books: newBooks,
-            bookList: newBooks
-        });
-        this.getBooks();
-    }
-
     render() {
         var renderBooks = this.state.bookList.map((b, id) =>
             <Tip key={b._id} book={b} removeBook={this.removeBook} />
@@ -61,7 +50,7 @@ class BookList extends React.Component {
             <div>
                 <div className="PostForm">
                     <h2> Submit suggestions </h2>
-                        <SubmitForm refreshTips={this.addBook} />
+                        <SubmitForm refreshTips={this.getBooks} />
                 </div>
                 <div className="Tips" style={{ marginLeft: '5px' }}>
                     <h2> Book suggestions </h2>
