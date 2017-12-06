@@ -29,7 +29,9 @@ class BookList extends React.Component {
                 this.setState({
                 books: books,
                 bookList: books
-            })});
+            })}).catch(function() {
+                console.log('notice me');
+            });
     }
 
     removeBook(_id) {

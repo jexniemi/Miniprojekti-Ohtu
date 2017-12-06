@@ -42,3 +42,14 @@ test('edit-button initialized', () => {
   const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test' }} />);
   expect(t.find('fa fa-pencil')).toHaveLength(0);
 });
+
+test('ajax call are possible', () => {
+  const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test', _id: 1 }} removeBook={(temp) => {return 0}} />);
+  t.instance().update();
+  t.instance().delete();
+});
+
+test('update clickable', () => {
+  const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test', _id: 1 }} removeBook={(temp) => {return 0}} />);
+  t.find('span').simulate('click');
+});
