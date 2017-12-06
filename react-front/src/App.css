@@ -6,11 +6,27 @@
 .container {
     margin-left: 1%;
     margin-right: 1%;
-    width: 100%;
 }
 
-.Content {
-    padding: 20px;
+.Contents {
+    left: 2.5%;
+    position: absolute;
+    padding: 3%;
+    min-width: 95%;
+    min-height: 810px;
+    background-color: white;
+}
+
+.Wrapper {
+    width: 100%;
+    min-height: 860px;
+    background-image: url("./images/background2.jpeg");
+    background-size: cover;
+}
+
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
 }
 
 .PostForm {

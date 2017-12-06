@@ -14,7 +14,7 @@ class NavigationBar extends React.Component {
                 <Navbar>
                     <Navbar.Header>
                         <Navbar.Brand>
-                            <a>Books</a>
+                            <a>BookBuddy</a>
                         </Navbar.Brand>
                     </Navbar.Header>
                 </Navbar>

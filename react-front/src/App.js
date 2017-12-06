@@ -10,11 +10,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <NavigationBar />
-        <div className="Content">
-          <BookList />
-        </div>
+      <div className="Wrapper">
+        <NavigationBar className="Navbar" />   
+          <div className="Contents">
+            <BookList />
+          </div>
       </div>
     );
   }
