@@ -34,7 +34,8 @@ class BookList extends React.Component {
     removeBook(_id) {
         var newBooks = this.state.books.filter(book => book._id !== _id);
         this.setState({
-            books: newBooks
+            books: newBooks,
+            bookList: newBooks
         });
     }
 
