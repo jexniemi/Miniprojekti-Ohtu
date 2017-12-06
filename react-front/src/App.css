@@ -9,17 +9,17 @@
 }
 
 .Contents {
-    left: 2.5%;
+    left: 5%;
     position: absolute;
-    padding: 3%;
-    min-width: 95%;
-    min-height: 700px;
+    padding: 5%;
+    min-width: 90%;
+    height: 110vh;
     background-color: white;
 }
 
 .Wrapper {
     width: 100%;
-    min-height: 750px;
+    height:118vh;
     background-image: url("./images/background2.jpeg");
     background-size: cover;
 }
@@ -27,6 +27,21 @@
 .navbar {
     margin-bottom: 0;
     border-radius: 0;
+    background-color: rgba(77, 76, 76, 0.719);
+    margin: 0;
+    padding: 0;
+    border: 0;
+    min-height: 8vh;
+}
+
+.NavHeader {
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 1.25em;
+    font-weight: 900;
+}
+
+.navbar-default .navbar-brand {
+    color: rgb(241, 241, 241);
 }
 
 .PostForm {

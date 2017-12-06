@@ -10,15 +10,13 @@ var FormGroup = require('react-bootstrap').FormGroup;
 class NavigationBar extends React.Component {
     render() {
         return (
-            <div className="App">
-                <Navbar>
-                    <Navbar.Header>
-                        <Navbar.Brand>
-                            <a>BookBuddy</a>
-                        </Navbar.Brand>
-                    </Navbar.Header>
-                </Navbar>
-            </div>
+            <Navbar>
+                <Navbar.Header>
+                    <Navbar.Brand>
+                        <a className="NavHeader">BookBuddy</a>
+                    </Navbar.Brand>
+                </Navbar.Header>
+            </Navbar>
         );
     }
 }
