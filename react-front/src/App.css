@@ -13,13 +13,13 @@
     position: absolute;
     padding: 3%;
     min-width: 95%;
-    min-height: 810px;
+    min-height: 700px;
     background-color: white;
 }
 
 .Wrapper {
     width: 100%;
-    min-height: 860px;
+    min-height: 750px;
     background-image: url("./images/background2.jpeg");
     background-size: cover;
 }
@@ -31,13 +31,13 @@
 
 .PostForm {
     float: right;
-    width: 20%;
+    min-width: 20%;
     margin-right: 10%;
 }
 
 .Tips {
     float: left;
-    width: 20%;
+    width: 30%;
 }
 
 

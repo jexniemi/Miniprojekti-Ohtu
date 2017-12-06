@@ -73,7 +73,7 @@ class BookList extends React.Component {
                                 });
                             }} type="text" placeholder="filter" />
                         </FormGroup>
-                        <div style={{marginLeft: "10px"}}>
+                        <div style={{marginLeft: "15px"}}>
                         {renderBooks}
                         </div>
                     </div>
