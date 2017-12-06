@@ -13,7 +13,6 @@ class App extends React.Component {
       <div>
         <NavigationBar />
         <div className="Content">
-          <h1>Lukuvinkkikirjasto</h1>
           <BookList />
         </div>
       </div>

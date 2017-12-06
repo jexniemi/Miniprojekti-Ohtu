@@ -41,18 +41,19 @@ class BookList extends React.Component {
         return (
             <div>
                 <div className="PostForm">
+                <h2> Submit suggestions </h2>
                     <SubmitForm refreshTips={this.getBooks} />
                 </div>
-                <h2>Tips: </h2>
                 <div className="Tips" style={{ marginLeft: '5px' }}>
-                    <div className="Search" style={{maxWidth: '20%'}}>
-                    <FormGroup>
-                        <FormControl type="text" placeholder="Search" />
-                    </FormGroup>
+                    <h2> Book suggestions </h2>
+                    <div className="Search">
+                        <FormGroup>
+                            <FormControl type="text" placeholder="Search" />
+                        </FormGroup>
                     </div>
-                    {' '}
-                    <Button type="submit">Submit</Button>
+                    <div style={{marginLeft: '10px'}}>
                     {renderBooks}
+                    </div>
                 </div>
             </div>
         )
