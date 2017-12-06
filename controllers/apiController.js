@@ -14,7 +14,12 @@ module.exports = function (app) {
     app.get("/api/tips", function (req, res) {
         database.getAllTips(function (err, result) {
             if (err) throw err;
-
+            const condition = req.query.search;
+            if (condition) {
+                result = result.filter(book => {
+                    return (book.author.includes(condition) || book.title.includes(condition));
+                });
+            }
             res.status(200).json(result);
         });
     });
