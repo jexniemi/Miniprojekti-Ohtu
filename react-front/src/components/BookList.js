@@ -10,7 +10,9 @@ class BookList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            books: []
+            books: [],
+            search: "",
+            bookList: []
         };
         this.getBooks = this.getBooks.bind(this);
         this.removeBook = this.removeBook.bind(this);
@@ -21,21 +23,25 @@ class BookList extends React.Component {
     }
 
     getBooks = () => {
-        fetch('/api/tips')
+        fetch('/api/tips?search=' + this.state.search)
             .then(res => res.json())
-            .then(books => this.setState({ books }));
+            .then(books => {
+                this.setState({
+                books: books,
+                bookList: books
+            })});
     }
 
     removeBook(_id) {
-        var newBooks = this.state.books.filter(book => book._id != _id);
+        var newBooks = this.state.books.filter(book => book._id !== _id);
         this.setState({
             books: newBooks
         });
     }
 
     render() {
-        var renderBooks = this.state.books.map((b, id) =>
-            <Tip book={b} removeBook={this.removeBook} />
+        var renderBooks = this.state.bookList.map((b, id) =>
+            <Tip key={b._id} book={b} removeBook={this.removeBook} />
         )
 
         return (
@@ -47,11 +53,16 @@ class BookList extends React.Component {
                 <div className="Tips" style={{ marginLeft: '5px' }}>
                     <div className="Search" style={{maxWidth: '20%'}}>
                     <FormGroup>
-                        <FormControl type="text" placeholder="Search" />
+                        <FormControl onChange={(e) => {
+                            var books = this.state.books.filter((book) => {
+                                return (book.author.includes(e.target.value) || book.title.includes(e.target.value));
+                            });
+                            this.setState({
+                                bookList: books
+                            });
+                        }} type="text" placeholder="filter" />
                     </FormGroup>
                     </div>
-                    {' '}
-                    <Button type="submit">Submit</Button>
                     {renderBooks}
                 </div>
             </div>
