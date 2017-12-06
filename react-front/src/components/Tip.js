@@ -36,8 +36,8 @@ class Tip extends React.Component {
                 <input type="text" value={this.state.title}
                     onChange={(e) => this.setState({ title: e.target.value })} />
 
-                <span style={styles.complete} onClick={() => this.update()}><i class="fa fa-check" aria-hidden="true"></i></span>
-                <span style={styles.delete} onClick={() => this.delete()}><i class="fa fa-trash" aria-hidden="true"></i></span>
+                <span style={styles.complete} onClick={() => this.update()}><i className="fa fa-check" aria-hidden="true"></i></span>
+                <span style={styles.delete} onClick={() => this.delete()}><i className="fa fa-trash" aria-hidden="true"></i></span>
             </div>
         );
     }
@@ -78,7 +78,7 @@ class Tip extends React.Component {
             <div>
                 {this.state.editing && this.renderEdit()}
                 {!this.state.editing && <p>{author}: {title} <span style={styles.edit}
-                    onClick={() => this.changeEditing()}><i class="fa fa-pencil" aria-hidden="true"></i></span></p>}
+                    onClick={() => this.changeEditing()}><i className="fa fa-pencil" aria-hidden="true"></i></span></p>}
             </div>
         )
     }
