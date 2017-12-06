@@ -11,7 +11,6 @@ class BookList extends React.Component {
         super(props);
         this.state = {
             books: [],
-            search: "",
             bookList: []
         };
         this.getBooks = this.getBooks.bind(this);
@@ -23,7 +22,7 @@ class BookList extends React.Component {
     }
 
     getBooks = () => {
-        fetch('/api/tips?search=' + this.state.search)
+        fetch('/api/tips')
             .then(res => res.json())
             .then(books => {
                 this.setState({
