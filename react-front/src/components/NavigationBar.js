@@ -1,7 +1,5 @@
 import React from 'react';
 
-// comment
-
 var Button = require('react-bootstrap').Button;
 var Navbar = require('react-bootstrap').Navbar;
 var FormControl = require('react-bootstrap').FormControl;
