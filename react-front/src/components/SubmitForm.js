@@ -1,5 +1,4 @@
 import React from 'react';
-import Field from './formfields/Field';
 import $ from "jquery";
 
 var Button = require('react-bootstrap').Button;
