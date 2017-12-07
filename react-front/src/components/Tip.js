@@ -77,7 +77,7 @@ class Tip extends React.Component {
         return (
             <div>
                 {this.state.editing && this.renderEdit()}
-                {!this.state.editing && <p>- {author}: {title} <span style={styles.edit}
+                {!this.state.editing && <p><p style={{fontWeight: 'bold', display: 'inline'}}>- {author}</p>: {title} <span style={styles.edit}
                     onClick={() => this.changeEditing()}><i className="fa fa-pencil" aria-hidden="true"></i></span></p>}
             </div>
         )
