@@ -28,16 +28,21 @@
     margin-bottom: 0;
     border-radius: 0;
     background-color: rgba(77, 76, 76, 0.719);
-    margin: 0;
     padding: 0;
     border: 0;
     min-height: 8vh;
+    text-align: center;
+    margin:auto;
 }
 
 .NavHeader {
-    font-family: Impact, Charcoal, sans-serif;
-    font-size: 1.25em;
-    font-weight: 900;
+    position: relative;
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: 600;
+    padding: 0;
+    font-size: 16px; 
+    font-size: 1vw;
+    padding: 25%;
 }
 
 .navbar-default .navbar-brand {
@@ -57,11 +62,11 @@
 
 
 h1 {
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: "Arial Black", Gadget, sans-serif;
     color: rgb(95, 95, 95);
 }
 
 h2 {
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: "Arial Black", Gadget, sans-serif;
     color: rgb(95, 95, 95);
 }
