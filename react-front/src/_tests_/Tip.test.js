@@ -13,7 +13,7 @@ it('renders without crashing', () => {
 
 test('Tip renders correct text', () => {
   const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test' }} />);
-  expect(t.text()).toEqual('test: test ');
+  expect(t.text()).toEqual("- test: test ");
 });
 
 test('renders props correctly', () => {
