@@ -9,6 +9,7 @@ dokumentoitu, integroitu muuhun ohjelmistoon ja viety
 tuotantoympäristöön
 
 
-Testikattavuus 'Your-Path-Here/Miniprojekti-Ohtu/react-front/coverage/lcov-report/index.html'
+Testikattavuus 'Your-Path-Here/Miniprojekti-Ohtu/react-front/coverage/lcov-report/index.html' <br>
+Codecov: (https://codecov.io/gh/jexniemi/Miniprojekti-Ohtu)
 
 Ohtustats-id: 5a097c5a14d85c002869604e
