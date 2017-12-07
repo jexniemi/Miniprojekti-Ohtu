@@ -1,3 +1,3 @@
 ignore:
-- index.js
-- registerServiceWorker.js
+- /react-front/src/registerServiceWorker.js
+- /react-front/src/index.js
