@@ -58,8 +58,8 @@ class BookList extends React.Component {
                         <FormGroup>
                             <FormControl onChange={(e) => {
                                 var books = this.state.books.filter((book) => {
-                                    return (book.author.toLowerCase().includes(e.target.value.trim()) 
-                                            || book.title.toLowerCase().includes(e.target.value.trim()));
+                                    return (book.author.toLowerCase().includes(e.target.value.toLowerCase().trim()) 
+                                            || book.title.toLowerCase().includes(e.target.value.toLowerCase().trim()));
                                 });
                                 this.setState({
                                     bookList: books
