@@ -37,7 +37,6 @@ class Tip extends React.Component {
                     onChange={(e) => this.setState({ title: e.target.value })} />
 
                 <span style={styles.complete} onClick={() => this.update()}><i className="fa fa-check" aria-hidden="true"></i></span>
-                <span style={styles.delete} onClick={() => this.delete()}><i className="fa fa-trash" aria-hidden="true"></i></span>
             </div>
         );
     }
@@ -77,8 +76,12 @@ class Tip extends React.Component {
         return (
             <div>
                 {this.state.editing && this.renderEdit()}
-                {!this.state.editing && <p><p style={{fontWeight: 'bold', display: 'inline'}}>- {author}</p>: {title} <span style={styles.edit}
-                    onClick={() => this.changeEditing()}><i className="fa fa-pencil" aria-hidden="true"></i></span></p>}
+                {!this.state.editing && <p>
+                    <p style={{fontWeight: 'bold', display: 'inline'}}>- {author}</p>: {title} <span style={styles.edit}
+                    onClick={() => this.changeEditing()}><i className="fa fa-pencil" aria-hidden="true"></i></span>
+                    <span style={styles.delete} onClick={() => this.delete()}><i className="fa fa-trash" aria-hidden="true"></i></span>
+                    </p>
+                    }
             </div>
         )
     }
@@ -86,7 +89,8 @@ class Tip extends React.Component {
 
 const styles = {
     edit: {
-        cursor: "pointer"
+        cursor: "pointer",
+        marginLeft: "4px"
     },
     complete: {
         margin: "0% 1% 0% 1%",
@@ -95,7 +99,8 @@ const styles = {
     },
     delete: {
         cursor: "pointer",
-        color: "red"
+        color: "red",
+        marginLeft: "4px"
     }
 }
 
