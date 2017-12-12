@@ -27,7 +27,6 @@ class App extends React.Component {
   }
 
   changeView(newView) {
-    console.log(newView);
     this.getBooks();
     this.setState({
       view: newView

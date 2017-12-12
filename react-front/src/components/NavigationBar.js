@@ -15,7 +15,7 @@ const books = {
 }
 const videos = { 
     viewName: "videos",
-    target: "Video",
+    target: "Youtube",
     field1: "Video",
     field2: "Link"
 }

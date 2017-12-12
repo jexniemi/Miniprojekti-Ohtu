@@ -25,12 +25,13 @@ class SubmitForm extends React.Component {
             method: "POST",
             body: JSON.stringify({
                 author: this.state.author,
-                title: this.state.title
+                title: this.state.title,
+                type: this.props.view.viewName
             }),
             headers: { "Content-Type": "application/json" }
         }).then(this.props.refreshTips())
         .catch(function() {
-        console.log('notice me')});
+            console.log('error posting new a tip')});
     }
 
     render() {
