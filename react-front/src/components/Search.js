@@ -12,12 +12,16 @@ class Search extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            bookList: []
+            bookList: this.props.books
         };
     }
 
     componentWillMount() {
         first = 0;
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({bookList: nextProps.books})
     }
 
     render() {
@@ -31,7 +35,7 @@ class Search extends React.Component {
             renderedBooks = this.state.bookList.map((b, id) =>
                 <Tip key={b._id} book={b} removeBook={this.props.removeBook} />
             )
-        }    
+        }   
 
         return (
             <div className="Search">

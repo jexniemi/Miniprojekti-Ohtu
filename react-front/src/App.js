@@ -38,7 +38,6 @@ class App extends React.Component {
     fetch('/api/tips')
         .then(res => res.json())
         .then(books => {
-            console.log(books);
             this.setState({
                 books: books
             })
@@ -66,7 +65,12 @@ class App extends React.Component {
       <div className="Wrapper">
         <NavigationBar changeView={this.changeView} className="Navbar" />   
           <div className="Contents">
-            <BookList view={this.state.view} books={this.state.books} removeBook={this.removeBook} updateBooks={this.updateBooks}/>
+            <BookList 
+                view={this.state.view} 
+                books={this.state.books} 
+                removeBook={this.removeBook} 
+                updateBooks={this.updateBooks} 
+                getBooks={this.getBooks} />
           </div>
       </div>
     );

@@ -8,10 +8,6 @@ var FormControl = require('react-bootstrap').FormControl;
 var FormGroup = require('react-bootstrap').FormGroup;
 
 class BookList extends React.Component {
-    componentDIdUpdate() {
-        console.log("im here");
-    }
-
     render() {
         var books = this.props.books.filter((item) => {
             return item.type === this.props.view.viewName; 
@@ -20,7 +16,7 @@ class BookList extends React.Component {
             <div>
                 <div className="PostForm">
                     <h2> Submit suggestions </h2>
-                        <SubmitForm refreshTips={this.getBooks} view={this.props.view}/>
+                        <SubmitForm refreshTips={this.props.getBooks} view={this.props.view}/>
                 </div>
                 <div className="Tips" style={{ marginLeft: '5px' }}>
                     <h2> {this.props.view.target} suggestions </h2>
