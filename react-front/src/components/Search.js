@@ -6,20 +6,33 @@ var Button = require('react-bootstrap').Button;
 var FormControl = require('react-bootstrap').FormControl;
 var FormGroup = require('react-bootstrap').FormGroup;
 
+var first = 0;
+
 class Search extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            books: this.props.books
+            bookList: []
         };
     }
 
-    componentDidUpdate() {
-        console.log("ada");
-        console.log(this.props.books);
+    componentWillMount() {
+        first = 0;
     }
 
     render() {
+        var renderedBooks;
+        if (first < 2) {
+            renderedBooks = this.props.books.map((b, id) =>
+                <Tip key={b._id} book={b} removeBook={this.props.removeBook} />
+            )
+            first++;
+        } else {
+            renderedBooks = this.state.bookList.map((b, id) =>
+                <Tip key={b._id} book={b} removeBook={this.props.removeBook} />
+            )
+        }    
+
         return (
             <div className="Search">
                 <FormGroup>
@@ -28,9 +41,12 @@ class Search extends React.Component {
                             return (book.author.toLowerCase().includes(e.target.value.toLowerCase().trim()) 
                                     || book.title.toLowerCase().includes(e.target.value.toLowerCase().trim()));
                         });
-                        this.props.updateBooks(books);
+                        this.setState({ bookList: books });
                     }} type="text" placeholder="filter" />
                 </FormGroup>
+                <div style={{marginLeft: "15px"}}>
+                    {renderedBooks}
+                </div>
             </div>
         )
     }
