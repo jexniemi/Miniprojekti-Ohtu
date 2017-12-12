@@ -7,11 +7,15 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: "books"
+        view: { 
+            viewName: "books",
+            target: "Book",
+            field1: "Author",
+            field2: "Book title"
+        }
     }
 
     this.changeView = this.changeView.bind(this);
-    this.renderContent = this.renderContent.bind(this);
   }
 
   changeView(newView) {
@@ -21,21 +25,12 @@ class App extends React.Component {
     });
   }
 
-  renderContent() {
-    return (
-      <div>
-        {this.state.view === "books" && <BookList />}
-        {this.state.view === "videos" && <p>VIDEOITA!!! :-)</p>}
-      </div>
-    )
-  }
-
   render() {
     return (
       <div className="Wrapper">
         <NavigationBar changeView={this.changeView} className="Navbar" />   
           <div className="Contents">
-            {this.renderContent()}
+            <BookList view={this.state.view}/>
           </div>
       </div>
     );

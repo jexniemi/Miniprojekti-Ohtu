@@ -37,9 +37,9 @@ class SubmitForm extends React.Component {
         return (
             <form>
                 <FormGroup>
-                    <ControlLabel>Author:</ControlLabel>
+                    <ControlLabel>{this.props.view.field1}:</ControlLabel>
                     <FormControl type="text" onChange={(e) => this.setState({ author: e.target.value })} value={this.state.author} />
-                    <ControlLabel>Book title:</ControlLabel>
+                    <ControlLabel>{this.props.view.field2}:</ControlLabel>
                     <FormControl type="text" onChange={(e) => this.setState({ title: e.target.value })} value={this.state.title} />
                 </FormGroup>
                 <Button onClick={() => this.postForm()}>Submit</Button>

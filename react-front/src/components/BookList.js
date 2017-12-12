@@ -1,6 +1,7 @@
 import React from 'react';
 import Tip from "./Tip";
 import SubmitForm from './SubmitForm';
+import Search from './Search';
 
 var Button = require('react-bootstrap').Button;
 var FormControl = require('react-bootstrap').FormControl;
@@ -18,18 +19,24 @@ class BookList extends React.Component {
     }
 
     componentDidMount() {
-        this.getBooks();
+        this.getBooks();    
+    }
+
+    componentDidUpdate() {
+        console.log("hwe");
     }
 
     getBooks = () => {
         fetch('/api/tips')
             .then(res => res.json())
             .then(books => {
+                console.log(books);
                 this.setState({
-                books: books,
-                bookList: books
-            })}).catch(function() {
-                console.log('notice me');
+                    books: books,
+                    bookList: books
+                })
+            }).catch(function() {
+                console.log('Could not fetch books');
             });
     }
 
@@ -42,34 +49,19 @@ class BookList extends React.Component {
     }
 
     render() {
-        var renderBooks = this.state.bookList.map((b, id) =>
-            <Tip key={b._id} book={b} removeBook={this.removeBook} />
-        )
+        var books = this.state.books.filter((item) => {
+            return item.type === this.props.view.viewName; 
+        });
 
         return (
             <div>
                 <div className="PostForm">
                     <h2> Submit suggestions </h2>
-                        <SubmitForm refreshTips={this.getBooks} />
+                        <SubmitForm refreshTips={this.getBooks} view={this.props.view}/>
                 </div>
                 <div className="Tips" style={{ marginLeft: '5px' }}>
-                    <h2> Book suggestions </h2>
-                    <div className="Search">
-                        <FormGroup>
-                            <FormControl onChange={(e) => {
-                                var books = this.state.books.filter((book) => {
-                                    return (book.author.toLowerCase().includes(e.target.value.toLowerCase().trim()) 
-                                            || book.title.toLowerCase().includes(e.target.value.toLowerCase().trim()));
-                                });
-                                this.setState({
-                                    bookList: books
-                                });
-                            }} type="text" placeholder="filter" />
-                        </FormGroup>
-                        <div style={{marginLeft: "15px"}}>
-                            {renderBooks}
-                        </div>
-                    </div>
+                    <h2> {this.props.view.target} suggestions </h2>
+                    <Search books={books} removeBook={this.removeBook}/>
                 </div>
             </div>
         )
