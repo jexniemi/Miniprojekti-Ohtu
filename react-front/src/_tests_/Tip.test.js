@@ -64,6 +64,16 @@ test('edit clickable in videos', () => {
   t.find('#edit').simulate('click');
 });
 
+test('edit clickable in books', () => {
+  const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test', _id: 1, type: 'books' }} />);
+  t.find('#adit').simulate('click');
+});
+
+test('delete clickable in books', () => {
+  const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test', _id: 1, type: 'books' }} removeBook={() => {}} />);
+  t.find('#edit').simulate('click');
+});
+
 test('delete clickable in videos', () => {
   const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test', _id: 1, type: 'videos' }} removeBook={() => {}} />);
   t.find('#delete').simulate('click');

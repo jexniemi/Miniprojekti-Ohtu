@@ -85,7 +85,7 @@ class Tip extends React.Component {
                 {
                     (this.props.book.type === "books") &&
                     <div>
-                        <p style={{fontWeight: 'bold', display: 'inline'}}>- {author}</p>: {title} <span id='edit' style={styles.edit}
+                        <p style={{fontWeight: 'bold', display: 'inline'}}>- {author}</p>: {title} <span id='adit' style={styles.edit}
                         onClick={() => this.changeEditing()}><i className="fa fa-pencil" aria-hidden="true"></i></span>
                         <span id='edit' style={styles.delete} onClick={() => this.delete()}><i className="fa fa-trash" aria-hidden="true"></i></span>
                     </div>
