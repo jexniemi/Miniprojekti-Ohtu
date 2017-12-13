@@ -79,7 +79,7 @@ class Tip extends React.Component {
             var videoId = parts[1];
         } 
         return (
-            <div>
+            <div style={{ marginBottom: "5%" }}>
                 {
                     (this.props.book.type === "books") &&
                     <div>
@@ -90,7 +90,7 @@ class Tip extends React.Component {
                 }
                 {
                     (this.props.book.type === "videos") &&
-                    <div>
+                    <div style={{ fontSize: "20px" }}>
                         <p style={{fontWeight: 'bold', display: 'inline'}}>- {author}</p><span style={styles.edit}
                         onClick={() => this.changeEditing()}><i className="fa fa-pencil" aria-hidden="true"></i></span>
                         <span style={styles.delete} onClick={() => this.delete()}><i className="fa fa-trash" aria-hidden="true"></i></span>
