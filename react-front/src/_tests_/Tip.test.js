@@ -11,9 +11,19 @@ it('renders without crashing', () => {
   ReactDOM.render(<Tip book={{ title: 'test', author: 'test' }} />, div);
 });
 
+it('video view renders', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<Tip book={{ title: 'test', author: 'test', type: 'videos' }} />, div);
+});
+
+it('book view renders', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<Tip book={{ title: 'test', author: 'test', type: 'books' }} />, div);
+});
+
 test('Tip renders correct text', () => {
   const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test' }} />);
-  expect(t.text()).toEqual("- test: test ");
+  expect(t.text()).toEqual("");
 });
 
 test('renders props correctly', () => {
@@ -47,9 +57,4 @@ test('ajax call are possible', () => {
   const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test', _id: 1 }} removeBook={(temp) => {return 0}} />);
   t.instance().update();
   t.instance().delete();
-});
-
-test('update clickable', () => {
-  const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test', _id: 1 }} removeBook={(temp) => {return 0}} />);
-  t.find('span').simulate('click');
 });
