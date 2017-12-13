@@ -15,3 +15,13 @@ test('initial text is "BookBuddy"', () => {
   const t = Enzyme.render(<NavigationBar />);
   expect(t.text()).toEqual("BookMateToggle navigationBooksVideos");
 });
+
+test('clicking book', () => {
+  const t = Enzyme.shallow(<NavigationBar changeView={() => {}} />);
+  t.find('#books').simulate('click');
+});
+
+test('clicking book', () => {
+  const t = Enzyme.shallow(<NavigationBar changeView={() => {}} />);
+  t.find('#videos').simulate('click');
+});
