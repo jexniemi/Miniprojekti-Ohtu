@@ -8,7 +8,8 @@ class Tip extends React.Component {
         this.state = {
             author: "",
             title: "",
-            editing: false
+            editing: false,
+            showVideo: false
         }
 
         this.renderEdit = this.renderEdit.bind(this);
@@ -95,7 +96,8 @@ class Tip extends React.Component {
                         <p style={{fontWeight: 'bold', display: 'inline'}}>{author}</p><span style={styles.edit}
                         onClick={() => this.changeEditing()}><i className="fa fa-pencil" aria-hidden="true"></i></span>
                         <span style={styles.delete} onClick={() => this.delete()}><i className="fa fa-trash" aria-hidden="true"></i></span>
-                        <YouTube videoId={videoId} />
+                        <span style={styles.showVideo} onClick={() => this.setState({ showVideo: !this.state.showVideo })}><i className="fa fa-caret-square-o-right" aria-hidden="true"></i></span>
+                        {this.state.showVideo ? <YouTube videoId={videoId} /> : <span></span>} 
                     </div> 
                 }
             </div>            
@@ -125,6 +127,11 @@ const styles = {
     delete: {
         cursor: "pointer",
         color: "red",
+        marginLeft: "4px"
+    },
+    showVideo: {
+        cursor: "pointer",
+        color: "green",
         marginLeft: "4px"
     }
 }
