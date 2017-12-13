@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1513204737206" clover="3.2.0">
-  <project timestamp="1513204737206" name="All files">
-    <metrics statements="117" coveredstatements="81" conditionals="45" coveredconditionals="14" methods="62" coveredmethods="29" elements="224" coveredelements="124" complexity="0" loc="117" ncloc="117" packages="2" files="8" classes="8">
+<coverage generated="1513206198978" clover="3.2.0">
+  <project timestamp="1513206198978" name="All files">
+    <metrics statements="119" coveredstatements="85" conditionals="45" coveredconditionals="14" methods="63" coveredmethods="32" elements="227" coveredelements="131" complexity="0" loc="119" ncloc="119" packages="2" files="8" classes="8">
       <package name="src">
         <metrics statements="35" coveredstatements="15" conditionals="25" coveredconditionals="0" methods="26" coveredmethods="8"/>
         <file name="App.js" path="C:\Code\Miniprojekti-Ohtu\react-front\src\App.js">
@@ -50,15 +50,16 @@
         </file>
       </package>
       <package name="src.components">
-        <metrics statements="82" coveredstatements="66" conditionals="20" coveredconditionals="14" methods="36" coveredmethods="21"/>
+        <metrics statements="84" coveredstatements="70" conditionals="20" coveredconditionals="14" methods="37" coveredmethods="24"/>
         <file name="BookList.js" path="C:\Code\Miniprojekti-Ohtu\react-front\src\components\BookList.js">
-          <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+          <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
           <line num="6" count="2" type="stmt"/>
           <line num="7" count="2" type="stmt"/>
           <line num="8" count="2" type="stmt"/>
-          <line num="12" count="7" type="stmt"/>
-          <line num="13" count="2" type="stmt"/>
-          <line num="15" count="7" type="stmt"/>
+          <line num="12" count="4" type="stmt"/>
+          <line num="16" count="7" type="stmt"/>
+          <line num="17" count="2" type="stmt"/>
+          <line num="19" count="7" type="stmt"/>
         </file>
         <file name="NavigationBar.js" path="C:\Code\Miniprojekti-Ohtu\react-front\src\components\NavigationBar.js">
           <metrics statements="12" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
@@ -115,17 +116,17 @@
           <line num="47" count="1" type="stmt"/>
         </file>
         <file name="Tip.js" path="C:\Code\Miniprojekti-Ohtu\react-front\src\components\Tip.js">
-          <metrics statements="31" coveredstatements="23" conditionals="12" coveredconditionals="11" methods="16" coveredmethods="8"/>
-          <line num="7" count="11" type="stmt"/>
-          <line num="8" count="11" type="stmt"/>
-          <line num="15" count="11" type="stmt"/>
-          <line num="16" count="11" type="stmt"/>
-          <line num="20" count="11" type="stmt"/>
-          <line num="21" count="11" type="stmt"/>
-          <line num="26" count="11" type="stmt"/>
-          <line num="27" count="11" type="stmt"/>
-          <line num="28" count="11" type="stmt"/>
-          <line num="32" count="2" type="stmt"/>
+          <metrics statements="32" coveredstatements="26" conditionals="12" coveredconditionals="11" methods="16" coveredmethods="10"/>
+          <line num="7" count="13" type="stmt"/>
+          <line num="8" count="13" type="stmt"/>
+          <line num="15" count="13" type="stmt"/>
+          <line num="16" count="13" type="stmt"/>
+          <line num="20" count="13" type="stmt"/>
+          <line num="21" count="13" type="stmt"/>
+          <line num="26" count="13" type="stmt"/>
+          <line num="27" count="13" type="stmt"/>
+          <line num="28" count="13" type="stmt"/>
+          <line num="32" count="4" type="stmt"/>
           <line num="35" count="0" type="stmt"/>
           <line num="39" count="0" type="stmt"/>
           <line num="41" count="0" type="stmt"/>
@@ -134,19 +135,20 @@
           <line num="49" count="1" type="stmt"/>
           <line num="57" count="1" type="stmt"/>
           <line num="58" count="1" type="stmt"/>
-          <line num="72" count="3" type="stmt"/>
-          <line num="78" count="24" type="stmt"/>
-          <line num="79" count="24" type="cond" truecount="2" falsecount="0"/>
-          <line num="80" count="2" type="stmt"/>
-          <line num="81" count="2" type="stmt"/>
-          <line num="83" count="24" type="stmt"/>
-          <line num="89" count="0" type="stmt"/>
+          <line num="72" count="5" type="stmt"/>
+          <line num="78" count="28" type="stmt"/>
+          <line num="79" count="28" type="cond" truecount="2" falsecount="0"/>
+          <line num="80" count="4" type="stmt"/>
+          <line num="81" count="4" type="stmt"/>
+          <line num="83" count="28" type="stmt"/>
+          <line num="89" count="1" type="stmt"/>
           <line num="90" count="0" type="stmt"/>
-          <line num="97" count="0" type="stmt"/>
+          <line num="97" count="1" type="stmt"/>
           <line num="98" count="0" type="stmt"/>
           <line num="99" count="0" type="stmt"/>
-          <line num="108" count="26" type="stmt"/>
+          <line num="108" count="32" type="stmt"/>
           <line num="117" count="4" type="stmt"/>
+          <line num="125" count="4" type="stmt"/>
         </file>
       </package>
     </metrics>

@@ -58,3 +58,14 @@ test('ajax call are possible', () => {
   t.instance().update();
   t.instance().delete();
 });
+
+test('edit is clickable', () => {
+  const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test', _id: 1, type: 'books' }} />);
+  t.find('#edit').simulate('click');
+});
+
+test('submit clickable', () => {
+  const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test', _id: 1, type: 'videos' }} />);
+  t.find('#edit').simulate('click');
+})
+
