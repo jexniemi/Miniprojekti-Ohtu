@@ -40,6 +40,10 @@
     margin:auto;
 }
 
+.NavItem {
+    color: white;
+}
+
 .NavHeader {
     position: relative;
     font-family: Verdana, Geneva, sans-serif;

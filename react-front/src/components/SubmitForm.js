@@ -46,7 +46,7 @@ class SubmitForm extends React.Component {
                     <FormControl type="text" onChange={(e) => this.setState({ title: e.target.value })} value={this.state.title} />
                 </FormGroup>
                 
-                <Button disabled={!isEnabled}  onClick={() => this.postForm()}>Sumbit</Button> 
+                <Button disabled={!isEnabled}  onClick={() => this.postForm()}>Submit</Button> 
             </form>
         );
     }
