@@ -60,7 +60,8 @@ class Tip extends React.Component {
             data: {
                 _id: this.props.book._id,
                 author: this.state.author,
-                title: this.state.title
+                title: this.state.title,
+                type: this.props.book.type
             },
             dataType: "application/json"
         });
