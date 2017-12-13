@@ -1,5 +1,6 @@
 import React from "react";
 import $ from "jquery";
+import YouTube from 'react-youtube';
 
 class Tip extends React.Component {
     constructor(props) {
@@ -71,17 +72,40 @@ class Tip extends React.Component {
         });
     }
 
+    renderTip() {
+        var {author, title} = this.state;       
+        if (this.props.book.type === "videos") {
+            var parts = this.props.book.title.split("?v=");
+            var videoId = parts[1];
+        } 
+        return (
+            <div>
+                {
+                    (this.props.book.type === "books") &&
+                    <div>
+                        <p style={{fontWeight: 'bold', display: 'inline'}}>- {author}</p>: {title} <span style={styles.edit}
+                        onClick={() => this.changeEditing()}><i className="fa fa-pencil" aria-hidden="true"></i></span>
+                        <span style={styles.delete} onClick={() => this.delete()}><i className="fa fa-trash" aria-hidden="true"></i></span>
+                    </div>
+                }
+                {
+                    (this.props.book.type === "videos") &&
+                    <div>
+                        <p style={{fontWeight: 'bold', display: 'inline'}}>- {author}</p><span style={styles.edit}
+                        onClick={() => this.changeEditing()}><i className="fa fa-pencil" aria-hidden="true"></i></span>
+                        <span style={styles.delete} onClick={() => this.delete()}><i className="fa fa-trash" aria-hidden="true"></i></span>
+                        <YouTube videoId={videoId} />
+                    </div> 
+                }
+            </div>            
+        )
+    }
+
     render() {
-        var {author, title} = this.state;
         return (
             <div>
                 {this.state.editing && this.renderEdit()}
-                {!this.state.editing && <p>
-                    <p style={{fontWeight: 'bold', display: 'inline'}}>- {author}</p>: {title} <span style={styles.edit}
-                    onClick={() => this.changeEditing()}><i className="fa fa-pencil" aria-hidden="true"></i></span>
-                    <span style={styles.delete} onClick={() => this.delete()}><i className="fa fa-trash" aria-hidden="true"></i></span>
-                    </p>
-                    }
+                {!this.state.editing && this.renderTip()}
             </div>
         )
     }
