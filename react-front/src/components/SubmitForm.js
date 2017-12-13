@@ -35,7 +35,7 @@ class SubmitForm extends React.Component {
     }
 
     render() {
-        var isEnabled = this.state.author.length > 0 && this.state.title.length > 0;     
+        var isEnabled = this.state.author.trim().length > 0 && this.state.title.trim().length > 0 && this.state.author.trim().length < 60 && this.state.title.trim().length < 60;
         return (
             <form>
                 <FormGroup>
