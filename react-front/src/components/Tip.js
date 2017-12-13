@@ -38,7 +38,7 @@ class Tip extends React.Component {
                 <input type="text" value={this.state.title}
                     onChange={(e) => this.setState({ title: e.target.value })} />
 
-                <span style={styles.complete} onClick={() => this.update()}><i className="fa fa-check" aria-hidden="true"></i></span>
+                <span id='rendered' style={styles.complete} onClick={() => this.update()}><i className="fa fa-check" aria-hidden="true"></i></span>
             </div>
         );
     }

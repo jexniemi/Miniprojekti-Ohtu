@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1513207499288" clover="3.2.0">
-  <project timestamp="1513207499289" name="All files">
-    <metrics statements="119" coveredstatements="90" conditionals="45" coveredconditionals="15" methods="63" coveredmethods="37" elements="227" coveredelements="142" complexity="0" loc="119" ncloc="119" packages="2" files="8" classes="8">
+<coverage generated="1513207864862" clover="3.2.0">
+  <project timestamp="1513207864862" name="All files">
+    <metrics statements="119" coveredstatements="91" conditionals="45" coveredconditionals="15" methods="63" coveredmethods="38" elements="227" coveredelements="144" complexity="0" loc="119" ncloc="119" packages="2" files="8" classes="8">
       <package name="src">
         <metrics statements="35" coveredstatements="15" conditionals="25" coveredconditionals="0" methods="26" coveredmethods="8"/>
         <file name="App.js" path="C:\Code\Miniprojekti-Ohtu\react-front\src\App.js">
@@ -50,7 +50,7 @@
         </file>
       </package>
       <package name="src.components">
-        <metrics statements="84" coveredstatements="75" conditionals="20" coveredconditionals="15" methods="37" coveredmethods="29"/>
+        <metrics statements="84" coveredstatements="76" conditionals="20" coveredconditionals="15" methods="37" coveredmethods="30"/>
         <file name="BookList.js" path="C:\Code\Miniprojekti-Ohtu\react-front\src\components\BookList.js">
           <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
           <line num="6" count="2" type="stmt"/>
@@ -116,37 +116,37 @@
           <line num="47" count="1" type="stmt"/>
         </file>
         <file name="Tip.js" path="C:\Code\Miniprojekti-Ohtu\react-front\src\components\Tip.js">
-          <metrics statements="32" coveredstatements="29" conditionals="12" coveredconditionals="12" methods="16" coveredmethods="13"/>
-          <line num="7" count="16" type="stmt"/>
-          <line num="8" count="16" type="stmt"/>
-          <line num="15" count="16" type="stmt"/>
-          <line num="16" count="16" type="stmt"/>
-          <line num="20" count="16" type="stmt"/>
-          <line num="21" count="16" type="stmt"/>
-          <line num="26" count="16" type="stmt"/>
-          <line num="27" count="16" type="stmt"/>
-          <line num="28" count="16" type="stmt"/>
-          <line num="32" count="6" type="stmt"/>
+          <metrics statements="32" coveredstatements="30" conditionals="12" coveredconditionals="12" methods="16" coveredmethods="14"/>
+          <line num="7" count="17" type="stmt"/>
+          <line num="8" count="17" type="stmt"/>
+          <line num="15" count="17" type="stmt"/>
+          <line num="16" count="17" type="stmt"/>
+          <line num="20" count="17" type="stmt"/>
+          <line num="21" count="17" type="stmt"/>
+          <line num="26" count="17" type="stmt"/>
+          <line num="27" count="17" type="stmt"/>
+          <line num="28" count="17" type="stmt"/>
+          <line num="32" count="8" type="stmt"/>
           <line num="35" count="0" type="stmt"/>
           <line num="39" count="0" type="stmt"/>
-          <line num="41" count="0" type="stmt"/>
+          <line num="41" count="1" type="stmt"/>
           <line num="47" count="3" type="stmt"/>
           <line num="48" count="3" type="stmt"/>
           <line num="49" count="3" type="stmt"/>
-          <line num="57" count="1" type="stmt"/>
-          <line num="58" count="1" type="stmt"/>
-          <line num="72" count="7" type="stmt"/>
-          <line num="78" count="35" type="stmt"/>
-          <line num="79" count="35" type="cond" truecount="2" falsecount="0"/>
-          <line num="80" count="9" type="stmt"/>
-          <line num="81" count="9" type="stmt"/>
-          <line num="83" count="35" type="stmt"/>
+          <line num="57" count="2" type="stmt"/>
+          <line num="58" count="2" type="stmt"/>
+          <line num="72" count="9" type="stmt"/>
+          <line num="78" count="38" type="stmt"/>
+          <line num="79" count="38" type="cond" truecount="2" falsecount="0"/>
+          <line num="80" count="12" type="stmt"/>
+          <line num="81" count="12" type="stmt"/>
+          <line num="83" count="38" type="stmt"/>
           <line num="89" count="1" type="stmt"/>
           <line num="90" count="1" type="stmt"/>
-          <line num="97" count="1" type="stmt"/>
+          <line num="97" count="2" type="stmt"/>
           <line num="98" count="1" type="stmt"/>
           <line num="99" count="1" type="stmt"/>
-          <line num="108" count="41" type="stmt"/>
+          <line num="108" count="45" type="stmt"/>
           <line num="117" count="4" type="stmt"/>
           <line num="125" count="4" type="stmt"/>
         </file>

@@ -84,3 +84,10 @@ test('show clickable in videos', () => {
   t.find('#show').simulate('click');
 });
 
+test('rendered edit clickable in videos', () => {
+  const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test', _id: 1, type: 'videos' }} />);
+  t.instance().renderEdit();
+  t.find('#edit').simulate('click');
+  t.find('#rendered').simulate('click');
+});
+
