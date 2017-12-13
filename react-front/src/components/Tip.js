@@ -81,7 +81,7 @@ class Tip extends React.Component {
             var videoId = parts[1];
         } 
         return (
-            <div style={{ marginBottom: "5%" }}>
+            <div style={{ marginBottom: "2%" }}>
                 {
                     (this.props.book.type === "books") &&
                     <div>
@@ -96,8 +96,8 @@ class Tip extends React.Component {
                         <p style={{fontWeight: 'bold', display: 'inline'}}>{author}</p><span style={styles.edit}
                         onClick={() => this.changeEditing()}><i className="fa fa-pencil" aria-hidden="true"></i></span>
                         <span style={styles.delete} onClick={() => this.delete()}><i className="fa fa-trash" aria-hidden="true"></i></span>
-                        <span style={styles.showVideo} onClick={() => this.setState({ showVideo: !this.state.showVideo })}><i className="fa fa-caret-square-o-right" aria-hidden="true"></i></span>
-                        {this.state.showVideo ? <YouTube videoId={videoId} /> : <span></span>} 
+                        <span style={styles.showVideo} onClick={() => this.setState({ showVideo: !this.state.showVideo })}><i className="fa fa-caret-square-o-right" aria-hidden="true"></i></span><br />
+                        {this.state.showVideo ? <YouTube videoId={videoId} opts={videoOpts}/> : <span></span>} 
                     </div> 
                 }
             </div>            
@@ -111,6 +111,14 @@ class Tip extends React.Component {
                 {!this.state.editing && this.renderTip()}
             </div>
         )
+    }
+}
+
+const videoOpts = {
+    height: '220vh',
+    width: '440vh',
+    playerVars: { // https://developers.google.com/youtube/player_parameters
+      autoplay: 1
     }
 }
 

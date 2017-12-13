@@ -33,21 +33,6 @@ class App extends React.Component {
     });
   }
 
-  _onReady(event) {
-    // access to player in all event handlers via event.target
-    event.target.pauseVideo();
-  }
-
-  renderContent() {
-    const opts = {
-      height: '390',
-      width: '640',
-      playerVars: { // https://developers.google.com/youtube/player_parameters
-        autoplay: 1
-      }
-    }
-  }
-
     getBooks = () => {
       fetch('/api/tips')
         .then(res => res.json())
