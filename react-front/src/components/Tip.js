@@ -91,7 +91,7 @@ class Tip extends React.Component {
                 {
                     (this.props.book.type === "videos") &&
                     <div style={{ fontSize: "20px" }}>
-                        <p style={{fontWeight: 'bold', display: 'inline'}}>- {author}</p><span style={styles.edit}
+                        <p style={{fontWeight: 'bold', display: 'inline'}}>{author}</p><span style={styles.edit}
                         onClick={() => this.changeEditing()}><i className="fa fa-pencil" aria-hidden="true"></i></span>
                         <span style={styles.delete} onClick={() => this.delete()}><i className="fa fa-trash" aria-hidden="true"></i></span>
                         <YouTube videoId={videoId} />
