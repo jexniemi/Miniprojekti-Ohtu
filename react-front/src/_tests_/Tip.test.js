@@ -58,3 +58,36 @@ test('ajax call are possible', () => {
   t.instance().update();
   t.instance().delete();
 });
+
+test('edit clickable in videos', () => {
+  const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test', _id: 1, type: 'videos' }} />);
+  t.find('#edit').simulate('click');
+});
+
+test('edit clickable in books', () => {
+  const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test', _id: 1, type: 'books' }} />);
+  t.find('#adit').simulate('click');
+});
+
+test('delete clickable in books', () => {
+  const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test', _id: 1, type: 'books' }} removeBook={() => {}} />);
+  t.find('#edit').simulate('click');
+});
+
+test('delete clickable in videos', () => {
+  const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test', _id: 1, type: 'videos' }} removeBook={() => {}} />);
+  t.find('#delete').simulate('click');
+});
+
+test('show clickable in videos', () => {
+  const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test', _id: 1, type: 'videos' }} />);
+  t.find('#show').simulate('click');
+});
+
+test('rendered edit clickable in videos', () => {
+  const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test', _id: 1, type: 'videos' }} />);
+  t.instance().renderEdit();
+  t.find('#edit').simulate('click');
+  t.find('#rendered').simulate('click');
+});
+

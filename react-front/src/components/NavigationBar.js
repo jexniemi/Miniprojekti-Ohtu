@@ -32,8 +32,8 @@ class NavigationBar extends React.Component {
                 </Navbar.Header>
                 <Navbar.Collapse>
                     <Nav>
-                        <NavItem style={styles.headerLink} onClick={() => this.props.changeView(books)}>Books</NavItem>
-                        <NavItem style={styles.headerLinkn} onClick={() => this.props.changeView(videos)}>Videos</NavItem>
+                        <NavItem id='books' style={styles.headerLink} onClick={() => this.props.changeView(books)}>Books</NavItem>
+                        <NavItem id='videos' style={styles.headerLinkn} onClick={() => this.props.changeView(videos)}>Videos</NavItem>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

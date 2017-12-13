@@ -38,7 +38,7 @@ class Tip extends React.Component {
                 <input type="text" value={this.state.title}
                     onChange={(e) => this.setState({ title: e.target.value })} />
 
-                <span style={styles.complete} onClick={() => this.update()}><i className="fa fa-check" aria-hidden="true"></i></span>
+                <span id='rendered' style={styles.complete} onClick={() => this.update()}><i className="fa fa-check" aria-hidden="true"></i></span>
             </div>
         );
     }
@@ -85,18 +85,18 @@ class Tip extends React.Component {
                 {
                     (this.props.book.type === "books") &&
                     <div>
-                        <p style={{fontWeight: 'bold', display: 'inline'}}>- {author}</p>: {title} <span style={styles.edit}
+                        <p style={{fontWeight: 'bold', display: 'inline'}}>- {author}</p>: {title} <span id='adit' style={styles.edit}
                         onClick={() => this.changeEditing()}><i className="fa fa-pencil" aria-hidden="true"></i></span>
-                        <span style={styles.delete} onClick={() => this.delete()}><i className="fa fa-trash" aria-hidden="true"></i></span>
+                        <span id='edit' style={styles.delete} onClick={() => this.delete()}><i className="fa fa-trash" aria-hidden="true"></i></span>
                     </div>
                 }
                 {
                     (this.props.book.type === "videos") &&
                     <div style={{ fontSize: "20px" }}>
-                        <p style={{fontWeight: 'bold', display: 'inline'}}>{author}</p><span style={styles.edit}
+                        <p style={{fontWeight: 'bold', display: 'inline'}}>{author}</p><span id='edit' style={styles.edit}
                         onClick={() => this.changeEditing()}><i className="fa fa-pencil" aria-hidden="true"></i></span>
-                        <span style={styles.delete} onClick={() => this.delete()}><i className="fa fa-trash" aria-hidden="true"></i></span>
-                        <span style={styles.showVideo} onClick={() => this.setState({ showVideo: !this.state.showVideo })}><i className="fa fa-caret-square-o-right" aria-hidden="true"></i></span><br />
+                        <span id='delete' style={styles.delete} onClick={() => this.delete()}><i className="fa fa-trash" aria-hidden="true"></i></span>
+                        <span id='show' style={styles.showVideo} onClick={() => this.setState({ showVideo: !this.state.showVideo })}><i className="fa fa-caret-square-o-right" aria-hidden="true"></i></span><br />
                         {this.state.showVideo ? <YouTube videoId={videoId} opts={videoOpts}/> : <span></span>} 
                     </div> 
                 }
