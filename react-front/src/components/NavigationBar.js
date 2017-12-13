@@ -25,7 +25,7 @@ class NavigationBar extends React.Component {
         return (
             <Navbar collapseOnSelect>
                 <Navbar.Header>
-                    <Navbar.Brand>
+                    <Navbar.Brand className="Brand">
                         <a href="/">BookMate</a>
                     </Navbar.Brand>
                     <Navbar.Toggle />

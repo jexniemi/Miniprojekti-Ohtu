@@ -16,7 +16,7 @@
     min-height: 110vh;
     height: auto;
     width: 90%;
-    background-color: rgba(255,255,255,0.9);
+    background-color: rgba(255,255,255,0.97);
 }
 
 .Wrapper {
@@ -35,10 +35,27 @@
     min-height: 8vh;
     text-align: center;
     margin:auto;
+    font-weight: bold;
+}
+
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+    color: #ffffff;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: rgb(184, 184, 184);
+    font-family: "Arial Black", Gadget, sans-serif;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: rgb(116, 116, 116);
+}
+
+.navbar-default .navbar-nav>li>a:active {
+    color: rgb(116, 116, 116);
 }
 
 .NavHeader {
-    position: relative;
     font-family: Verdana, Geneva, sans-serif;
     font-weight: 600;
     padding: 0;
