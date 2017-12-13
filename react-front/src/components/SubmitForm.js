@@ -35,8 +35,7 @@ class SubmitForm extends React.Component {
     }
 
     render() {
-        var isEnabled = this.state.author.length > 0 && this.state.title.length > 0;
-        
+        var isEnabled = this.state.author.length > 0 && this.state.title.length > 0;     
         return (
             <form>
                 <FormGroup>
@@ -45,8 +44,7 @@ class SubmitForm extends React.Component {
                     <ControlLabel>{this.props.view.field2}:</ControlLabel>
                     <FormControl type="text" onChange={(e) => this.setState({ title: e.target.value })} value={this.state.title} />
                 </FormGroup>
-                
-                <Button disabled={!isEnabled}  onClick={() => this.postForm()}>Sumbit</Button> 
+                <Button disabled={!isEnabled} onClick={() => this.postForm()}>Submit</Button> 
             </form>
         );
     }
