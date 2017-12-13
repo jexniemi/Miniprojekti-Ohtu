@@ -1,5 +1,6 @@
 import React from "react";
 import $ from "jquery";
+import YouTube from 'react-youtube';
 
 class Tip extends React.Component {
     constructor(props) {
@@ -7,7 +8,8 @@ class Tip extends React.Component {
         this.state = {
             author: "",
             title: "",
-            editing: false
+            editing: false,
+            showVideo: false
         }
 
         this.renderEdit = this.renderEdit.bind(this);
@@ -59,7 +61,8 @@ class Tip extends React.Component {
             data: {
                 _id: this.props.book._id,
                 author: this.state.author,
-                title: this.state.title
+                title: this.state.title,
+                type: this.props.book.type
             },
             dataType: "application/json"
         });
@@ -71,17 +74,41 @@ class Tip extends React.Component {
         });
     }
 
+    renderTip() {
+        var {author, title} = this.state;       
+        if (this.props.book.type === "videos") {
+            var parts = this.props.book.title.split("?v=");
+            var videoId = parts[1];
+        } 
+        return (
+            <div style={{ marginBottom: "5%" }}>
+                {
+                    (this.props.book.type === "books") &&
+                    <div>
+                        <p style={{fontWeight: 'bold', display: 'inline'}}>- {author}</p>: {title} <span style={styles.edit}
+                        onClick={() => this.changeEditing()}><i className="fa fa-pencil" aria-hidden="true"></i></span>
+                        <span style={styles.delete} onClick={() => this.delete()}><i className="fa fa-trash" aria-hidden="true"></i></span>
+                    </div>
+                }
+                {
+                    (this.props.book.type === "videos") &&
+                    <div style={{ fontSize: "20px" }}>
+                        <p style={{fontWeight: 'bold', display: 'inline'}}>{author}</p><span style={styles.edit}
+                        onClick={() => this.changeEditing()}><i className="fa fa-pencil" aria-hidden="true"></i></span>
+                        <span style={styles.delete} onClick={() => this.delete()}><i className="fa fa-trash" aria-hidden="true"></i></span>
+                        <span style={styles.showVideo} onClick={() => this.setState({ showVideo: !this.state.showVideo })}><i className="fa fa-caret-square-o-right" aria-hidden="true"></i></span>
+                        {this.state.showVideo ? <YouTube videoId={videoId} /> : <span></span>} 
+                    </div> 
+                }
+            </div>            
+        )
+    }
+
     render() {
-        var {author, title} = this.state;
         return (
             <div>
                 {this.state.editing && this.renderEdit()}
-                {!this.state.editing && <p>
-                    <p style={{fontWeight: 'bold', display: 'inline'}}>- {author}</p>: {title} <span style={styles.edit}
-                    onClick={() => this.changeEditing()}><i className="fa fa-pencil" aria-hidden="true"></i></span>
-                    <span style={styles.delete} onClick={() => this.delete()}><i className="fa fa-trash" aria-hidden="true"></i></span>
-                    </p>
-                    }
+                {!this.state.editing && this.renderTip()}
             </div>
         )
     }
@@ -100,6 +127,11 @@ const styles = {
     delete: {
         cursor: "pointer",
         color: "red",
+        marginLeft: "4px"
+    },
+    showVideo: {
+        cursor: "pointer",
+        color: "green",
         marginLeft: "4px"
     }
 }

@@ -2,6 +2,10 @@ var bodyParser = require("body-parser");
 // Get the database object
 var database = require("../database");
 
+function isEmpty(str) {
+    return !str || str.trim() === "";    
+}
+
 // Different routes
 module.exports = function (app) {
     app.use(bodyParser.json());
@@ -25,6 +29,12 @@ module.exports = function (app) {
     });
 
     app.post("/api/tips", function (req, res) {
+        var { author, title, type} = req.body;
+        if (isEmpty(author) || isEmpty(title) || isEmpty(type)) {
+            res.status(500).send("Author, title or type should not be empty")
+            return;
+        }
+
         database.postTip(req.body, function (err, result) {
             if (err) throw err;
 
@@ -33,6 +43,12 @@ module.exports = function (app) {
     });
 
     app.put("/api/tips", function (req, res) {
+        var { author, title, type} = req.body;
+        if (isEmpty(author) || isEmpty(title) || isEmpty(type)) {
+            res.status(500).send("Author, title or type should not be empty")
+            return;
+        }
+
         database.putTip(req.body, function (err, result) {
             if (err) throw err;
 
