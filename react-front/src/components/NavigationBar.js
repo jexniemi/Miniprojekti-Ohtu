@@ -13,7 +13,7 @@ class NavigationBar extends React.Component {
             <Navbar collapseOnSelect>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <a href="#">BookMate</a>
+                        <a href="/">BookMate</a>
                     </Navbar.Brand>
                     <Navbar.Toggle />
                 </Navbar.Header>
