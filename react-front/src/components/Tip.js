@@ -115,8 +115,8 @@ class Tip extends React.Component {
 }
 
 const videoOpts = {
-    height: '220vh',
-    width: '440vh',
+    height: '310vh',
+    width: '620vh',
     playerVars: { // https://developers.google.com/youtube/player_parameters
       autoplay: 1
     }
