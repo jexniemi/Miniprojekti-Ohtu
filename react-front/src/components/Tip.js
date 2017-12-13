@@ -87,7 +87,7 @@ class Tip extends React.Component {
                     <div>
                         <p style={{fontWeight: 'bold', display: 'inline'}}>- {author}</p>: {title} <span id='edit' style={styles.edit}
                         onClick={() => this.changeEditing()}><i className="fa fa-pencil" aria-hidden="true"></i></span>
-                        <span style={styles.delete} onClick={() => this.delete()}><i className="fa fa-trash" aria-hidden="true"></i></span>
+                        <span id='edit' style={styles.delete} onClick={() => this.delete()}><i className="fa fa-trash" aria-hidden="true"></i></span>
                     </div>
                 }
                 {
@@ -95,8 +95,8 @@ class Tip extends React.Component {
                     <div style={{ fontSize: "20px" }}>
                         <p style={{fontWeight: 'bold', display: 'inline'}}>{author}</p><span id='edit' style={styles.edit}
                         onClick={() => this.changeEditing()}><i className="fa fa-pencil" aria-hidden="true"></i></span>
-                        <span style={styles.delete} onClick={() => this.delete()}><i className="fa fa-trash" aria-hidden="true"></i></span>
-                        <span style={styles.showVideo} onClick={() => this.setState({ showVideo: !this.state.showVideo })}><i className="fa fa-caret-square-o-right" aria-hidden="true"></i></span><br />
+                        <span id='delete' style={styles.delete} onClick={() => this.delete()}><i className="fa fa-trash" aria-hidden="true"></i></span>
+                        <span id='show' style={styles.showVideo} onClick={() => this.setState({ showVideo: !this.state.showVideo })}><i className="fa fa-caret-square-o-right" aria-hidden="true"></i></span><br />
                         {this.state.showVideo ? <YouTube videoId={videoId} opts={videoOpts}/> : <span></span>} 
                     </div> 
                 }

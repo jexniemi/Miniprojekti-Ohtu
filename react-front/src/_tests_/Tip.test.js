@@ -59,13 +59,18 @@ test('ajax call are possible', () => {
   t.instance().delete();
 });
 
-test('edit is clickable', () => {
-  const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test', _id: 1, type: 'books' }} />);
+test('edit clickable in videos', () => {
+  const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test', _id: 1, type: 'videos' }} />);
   t.find('#edit').simulate('click');
 });
 
-test('submit clickable', () => {
+test('delete clickable in videos', () => {
+  const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test', _id: 1, type: 'videos' }} removeBook={() => {}} />);
+  t.find('#delete').simulate('click');
+});
+
+test('show clickable in videos', () => {
   const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test', _id: 1, type: 'videos' }} />);
-  t.find('#edit').simulate('click');
-})
+  t.find('#show').simulate('click');
+});
 
