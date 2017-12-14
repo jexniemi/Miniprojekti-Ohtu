@@ -66,6 +66,7 @@ class Tip extends React.Component {
             },
             dataType: "application/json"
         });
+        this.props.refreshTips();
     }
 
     changeEditing() {
