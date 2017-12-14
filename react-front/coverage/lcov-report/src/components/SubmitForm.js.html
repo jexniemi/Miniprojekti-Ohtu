@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">85.71% </span>
+        <span class="strong">86.67% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>12/14</span>
+        <span class='fraction'>13/15</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">25% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/0</span>
+        <span class='fraction'>1/4</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">71.43% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>5/7</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">85.71% </span>
+        <span class="strong">86.67% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>12/14</span>
+        <span class='fraction'>13/15</span>
       </div>
     </div>
   </div>
@@ -96,31 +96,33 @@
 51
 52
 53
-54</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+54
+55</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -132,8 +134,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -150,7 +152,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
-import Field from './formfields/Field';
 import $ from "jquery";
 &nbsp;
 var Button = require('react-bootstrap').Button;
@@ -177,24 +178,26 @@ class SubmitForm extends React.Component {
             method: "POST",
             body: JSON.stringify({
                 author: this.state.author,
-                title: this.state.title
+                title: this.state.title,
+                type: this.props.view.viewName
             }),
             headers: { "Content-Type": "application/json" }
-        }).catch(function() {
-            console.log('notice me');
-        }).then(this.props.refreshTips());
+        }).then(this.props.refreshTips())
+        .catch(function() {
+            console.log('error posting new a tip')});
     }
 &nbsp;
     render() {
+        var isEnabled = this.state.author.trim().length &gt; 0 &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >this.state.title.trim().length &gt; 0 </span>&amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >this.state.author.trim().length &lt; 60 </span>&amp;&amp; <span class="branch-3 cbranch-no" title="branch not covered" >this.state.title.trim().length &lt; 60;</span>
         return (
             &lt;form&gt;
                 &lt;FormGroup&gt;
-                    &lt;ControlLabel&gt;Author:&lt;/ControlLabel&gt;
+                    &lt;ControlLabel&gt;{this.props.view.field1}:&lt;/ControlLabel&gt;
                     &lt;FormControl type="text" onChange={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >this.setState({ author: e.target.value })}</span> value={this.state.author} /&gt;
-                    &lt;ControlLabel&gt;Book title:&lt;/ControlLabel&gt;
+                    &lt;ControlLabel&gt;{this.props.view.field2}:&lt;/ControlLabel&gt;
                     &lt;FormControl type="text" onChange={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >this.setState({ title: e.target.value })}</span> value={this.state.title} /&gt;
                 &lt;/FormGroup&gt;
-                &lt;Button onClick={() =&gt; this.postForm()}&gt;Submit&lt;/Button&gt;
+                &lt;Button disabled={!isEnabled} onClick={() =&gt; this.postForm()}&gt;Submit&lt;/Button&gt; 
             &lt;/form&gt;
         );
     }
@@ -208,7 +211,7 @@ export default SubmitForm;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Dec 07 2017 01:22:51 GMT+0200 (Suomen normaaliaika)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Dec 14 2017 01:31:04 GMT+0200 (Suomen normaaliaika)
 </div>
 </div>
 <script src="..\..\prettify.js"></script>

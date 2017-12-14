@@ -27,15 +27,15 @@ class NavigationBar extends React.Component {
         return (
             <Navbar collapseOnSelect fluid>
                 <Navbar.Header>
-                    <Navbar.Brand>
-                        <a href="#">BookMate</a>
+                    <Navbar.Brand className="Brand">
+                        <a href="/">BookMate</a>
                     </Navbar.Brand>
                     <Navbar.Toggle />
                 </Navbar.Header>
                 <Navbar.Collapse>
-                    <Nav bsStyle="pills">
-                        <NavItem style={styles.headerLink} onClick={() => this.props.changeView(books)}>Books</NavItem>
-                        <NavItem style={styles.headerLinkn} onClick={() => this.props.changeView(videos)}>Videos</NavItem>
+                    <Nav>
+                        <NavItem id='books' style={styles.headerLink} onClick={() => this.props.changeView(books)}>Books</NavItem>
+                        <NavItem id='videos' style={styles.headerLinkn} onClick={() => this.props.changeView(videos)}>Videos</NavItem>
                     </Nav>
 n                </Navbar.Collapse>
             </Navbar>

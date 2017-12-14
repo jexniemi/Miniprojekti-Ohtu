@@ -11,9 +11,19 @@ it('renders without crashing', () => {
   ReactDOM.render(<Tip book={{ title: 'test', author: 'test' }} />, div);
 });
 
+it('video view renders', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<Tip book={{ title: 'test', author: 'test', type: 'videos' }} />, div);
+});
+
+it('book view renders', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<Tip book={{ title: 'test', author: 'test', type: 'books' }} />, div);
+});
+
 test('Tip renders correct text', () => {
   const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test' }} />);
-  expect(t.text()).toEqual("- test: test ");
+  expect(t.text()).toEqual("");
 });
 
 test('renders props correctly', () => {
@@ -49,7 +59,35 @@ test('ajax call are possible', () => {
   t.instance().delete();
 });
 
-test('update clickable', () => {
-  const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test', _id: 1 }} removeBook={(temp) => {return 0}} />);
-  t.find('span').simulate('click');
+test('edit clickable in videos', () => {
+  const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test', _id: 1, type: 'videos' }} />);
+  t.find('#edit').simulate('click');
 });
+
+test('edit clickable in books', () => {
+  const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test', _id: 1, type: 'books' }} />);
+  t.find('#adit').simulate('click');
+});
+
+test('delete clickable in books', () => {
+  const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test', _id: 1, type: 'books' }} removeBook={() => {}} />);
+  t.find('#edit').simulate('click');
+});
+
+test('delete clickable in videos', () => {
+  const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test', _id: 1, type: 'videos' }} removeBook={() => {}} />);
+  t.find('#delete').simulate('click');
+});
+
+test('show clickable in videos', () => {
+  const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test', _id: 1, type: 'videos' }} />);
+  t.find('#show').simulate('click');
+});
+
+test('rendered edit clickable in videos', () => {
+  const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test', _id: 1, type: 'videos' }} />);
+  t.instance().renderEdit();
+  t.find('#edit').simulate('click');
+  t.find('#rendered').simulate('click');
+});
+

@@ -8,13 +8,13 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        view: { 
-            viewName: "books",
-            target: "Book",
-            field1: "Author",
-            field2: "Book title"
-        }, 
-        books: []
+      view: {
+        viewName: "books",
+        target: "Book",
+        field1: "Author",
+        field2: "Book title"
+      },
+      books: []
     }
     this.changeView = this.changeView.bind(this);
     this.getBooks = this.getBooks.bind(this);
@@ -33,47 +33,47 @@ class App extends React.Component {
     });
   }
 
-  getBooks = () => {
-    fetch('/api/tips')
+    getBooks = () => {
+      fetch('/api/tips')
         .then(res => res.json())
         .then(books => {
-            this.setState({
-                books: books
-            })
-        }).catch(function() {
-            console.log('Could not fetch books');
+          this.setState({
+            books: books
+          })
+        }).catch(function () {
+          console.log('Could not fetch books');
         });
-  }
+    }
 
-  removeBook(_id) {
-    var newBooks = this.state.books.filter(book => book._id !== _id);
-    this.setState({
+    removeBook(_id) {
+      var newBooks = this.state.books.filter(book => book._id !== _id);
+      this.setState({
         books: newBooks,
         bookList: newBooks
-    });
-  }
+      });
+    }
 
-  updateBooks(books) {
+    updateBooks(books) {
       this.setState({
-          bookList: books
+        bookList: books
       })
-  }
+    }
 
-  render() {
-    return (
-      <div className="Wrapper">
-        <NavigationBar changeView={this.changeView} className="Navbar" />   
+    render() {
+      return (
+        <div className="Wrapper">
+          <NavigationBar changeView={this.changeView} className="Navbar" />
           <div className="Contents">
-            <BookList 
-                view={this.state.view} 
-                books={this.state.books} 
-                removeBook={this.removeBook} 
-                updateBooks={this.updateBooks} 
-                getBooks={this.getBooks} />
+            <BookList
+              view={this.state.view}
+              books={this.state.books}
+              removeBook={this.removeBook}
+              updateBooks={this.updateBooks}
+              getBooks={this.getBooks} />
           </div>
-      </div>
-    );
+        </div>
+      );
+    }
   }
-}
 
-export default App;
+  export default App;

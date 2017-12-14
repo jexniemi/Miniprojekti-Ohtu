@@ -16,17 +16,14 @@
     min-height: 110vh;
     height: auto;
     width: 90%;
-    background-color: rgba(255,255,255,0.95);
-}
-
-#body {
-    background-image: url("./images/background2.jpeg");
+    background-color: rgba(255,255,255,0.97);
 }
 
 .Wrapper {
     width: 100%;
     height:118vh;
     background-size: cover;
+    background-image: url("./images/background2.jpeg");
 }
 
 .navbar {
@@ -38,6 +35,24 @@
     min-height: 8vh;
     text-align: center;
     margin:auto;
+    font-weight: bold;
+}
+
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+    color: #ffffff;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: rgb(184, 184, 184);
+    font-family: "Arial Black", Gadget, sans-serif;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: rgb(116, 116, 116);
+}
+
+.navbar-default .navbar-nav>li>a:active {
+    color: rgb(116, 116, 116);
 }
 
 .NavItem {
@@ -45,7 +60,6 @@
 }
 
 .NavHeader {
-    position: relative;
     font-family: Verdana, Geneva, sans-serif;
     font-weight: 600;
     padding: 0;
@@ -66,7 +80,10 @@
 
 .Tips {
     float: left;
-    width: 30%;
+    width: 65%;
+    overflow-y: auto;
+    max-height: 90vh;
+    padding-right: 50px;
 }
 
 
@@ -78,4 +95,8 @@ h1 {
 h2 {
     font-family: "Arial Black", Gadget, sans-serif;
     color: rgb(95, 95, 95);
+}
+
+a:hover {
+    text-decoration: none;
 }
