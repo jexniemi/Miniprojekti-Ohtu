@@ -28,12 +28,12 @@ class Search extends React.Component {
         var renderedBooks;
         if (first < 2) {
             renderedBooks = this.props.books.map((b, id) =>
-                <Tip key={b._id} book={b} removeBook={this.props.removeBook} />
+                <Tip key={b._id} book={b} removeBook={this.props.removeBook} refreshTips={this.props.refreshTips} />
             )
             first++;
         } else {
             renderedBooks = this.state.bookList.map((b, id) =>
-                <Tip key={b._id} book={b} removeBook={this.props.removeBook} />
+                <Tip key={b._id} book={b} removeBook={this.props.removeBook} refreshTips={this.props.refreshTips} />
             )
         }   
 
