@@ -13,16 +13,16 @@ it('renders without crashing', () => {
 
 it('video view renders', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Tip book={{ title: 'test', author: 'test', type: 'videos' }} />, div);
+  ReactDOM.render(<Tip refreshTips={() => {}}  book={{ title: 'test', author: 'test', type: 'videos' }} />, div);
 });
 
 it('book view renders', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Tip book={{ title: 'test', author: 'test', type: 'books' }} />, div);
+  ReactDOM.render(<Tip refreshTips={() => {}} book={{ title: 'test', author: 'test', type: 'books' }} />, div);
 });
 
 test('Tip renders correct text', () => {
-  const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test' }} />);
+  const t = Enzyme.shallow(<Tip refreshTips={() => {}} book={{ title: 'test', author: 'test' }} />);
   expect(t.text()).toEqual("");
 });
 
@@ -54,7 +54,7 @@ test('edit-button initialized', () => {
 });
 
 test('ajax call are possible', () => {
-  const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test', _id: 1 }} removeBook={(temp) => {return 0}} />);
+  const t = Enzyme.shallow(<Tip refreshTips={() => {}} book={{ title: 'test', author: 'test', _id: 1 }} removeBook={(temp) => {return 0}} />);
   t.instance().update();
   t.instance().delete();
 });
@@ -85,7 +85,7 @@ test('show clickable in videos', () => {
 });
 
 test('rendered edit clickable in videos', () => {
-  const t = Enzyme.shallow(<Tip book={{ title: 'test', author: 'test', _id: 1, type: 'videos' }} />);
+  const t = Enzyme.shallow(<Tip refreshTips={() => {}} book={{ title: 'test', author: 'test', _id: 1, type: 'videos' }} />);
   t.instance().renderEdit();
   t.find('#edit').simulate('click');
   t.find('#rendered').simulate('click');
