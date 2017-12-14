@@ -33,7 +33,7 @@ class NavigationBar extends React.Component {
                 <Navbar.Collapse>
                     <Nav>
                         <NavItem id='books' style={styles.headerLink} onClick={() => this.props.changeView(books)}>Books</NavItem>
-                        <NavItem id='videos' style={styles.headerLinkn} onClick={() => this.props.changeView(videos)}>Videos</NavItem>
+                        <NavItem id='videos' style={styles.headerLink} onClick={() => this.props.changeView(videos)}>Videos</NavItem>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
@@ -42,10 +42,7 @@ class NavigationBar extends React.Component {
 }
 
 const styles = {
-    headerLink: {
-        cursor: "pointer",
-        color: "white"
-    }
+    color: "white"
 }
 
 export default NavigationBar;
