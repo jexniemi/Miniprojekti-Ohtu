@@ -66,6 +66,7 @@ class Tip extends React.Component {
             },
             dataType: "application/json"
         });
+        this.props.refreshTips();
     }
 
     changeEditing() {
@@ -116,7 +117,7 @@ class Tip extends React.Component {
 
 const videoOpts = {
     height: '310vh',
-    width: '620vh',
+    width: '620vw',
     playerVars: { // https://developers.google.com/youtube/player_parameters
       autoplay: 1
     }

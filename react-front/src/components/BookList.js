@@ -24,7 +24,7 @@ class BookList extends React.Component {
                 </div>
                 <div className="Tips" style={{ marginLeft: '5px' }}>
                     <h2> {this.props.view.target} suggestions </h2>
-                    <Search books={books} removeBook={this.props.removeBook} updateBooks={this.props.updateBooks}/>
+                    <Search books={books} removeBook={this.props.removeBook} updateBooks={this.props.updateBooks} refreshTips={this.props.getBooks}/>
                 </div>
             </div>
         )

@@ -6,6 +6,8 @@ var FormControl = require('react-bootstrap').FormControl;
 var FormGroup = require('react-bootstrap').FormGroup;
 var Nav = require("react-bootstrap").Nav;
 var NavItem = require("react-bootstrap").NavItem;
+var Tab = require("react-bootstrap").Tab;
+var Tabs = require("react-bootstrap").Tabs;
 
 const books = { 
     viewName: "books",
@@ -23,7 +25,7 @@ const videos = {
 class NavigationBar extends React.Component {
     render() {
         return (
-            <Navbar collapseOnSelect>
+            <Navbar collapseOnSelect fluid>
                 <Navbar.Header>
                     <Navbar.Brand className="Brand">
                         <a href="/">BookMate</a>
@@ -35,14 +37,16 @@ class NavigationBar extends React.Component {
                         <NavItem id='books' style={styles.headerLink} onClick={() => this.props.changeView(books)}>Books</NavItem>
                         <NavItem id='videos' style={styles.headerLink} onClick={() => this.props.changeView(videos)}>Videos</NavItem>
                     </Nav>
-                </Navbar.Collapse>
+n                </Navbar.Collapse>
             </Navbar>
         );
     }
 }
 
 const styles = {
-    color: "white"
+    headerLink: {
+        cursor: "pointer"
+    }
 }
 
 export default NavigationBar;
