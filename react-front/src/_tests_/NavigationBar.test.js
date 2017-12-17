@@ -13,7 +13,7 @@ it('renders without crashing', () => {
 
 test('initial text is "BookBuddy"', () => {
   const t = Enzyme.render(<NavigationBar />);
-  expect(t.text()).toEqual("BookMateToggle navigationBooksVideos");
+  expect(t.text()).toEqual("BookMateToggle navigationBooksVideosn                ");
 });
 
 test('clicking book', () => {
