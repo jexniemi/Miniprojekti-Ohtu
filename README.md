@@ -7,6 +7,8 @@ Backlogs: https://docs.google.com/spreadsheets/d/e/2PACX-1vTBmzFMkWriXbDyjwPeGiA
 
 [tests](/react-front/src/_tests_)
 
+Raportti: https://docs.google.com/document/d/e/2PACX-1vTIb1hVu4dsOd8XYmgbuM486OJzGUWvAqKFboEq6nerutbQ1N7K5MOynGe-Ds_hYjXHE2t8Wky1S6GK/pub
+
 ### Definition of done
 
 Vaatimus on analysoitu, suunniteltu, ohjelmoitu, testattu,
